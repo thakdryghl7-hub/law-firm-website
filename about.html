@@ -1,122 +1,89 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>법률사무소 청변 - 대표변호사 소개</title>
+    <title>법률사무소 청변 | 소개</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Pretendard:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        body { font-family: 'Noto Sans KR', sans-serif; }
+        body { font-family: 'Pretendard', sans-serif; word-break: keep-all; }
         .serif { font-family: 'Noto Serif KR', serif; }
-        .font-pretendard { font-family: 'Pretendard', sans-serif; }
-
-        /* 가독성 최적화 클래스 */
-        .readable-contents {
-            font-family: 'Pretendard', sans-serif;
-            word-break: keep-all;       /* 단어 단위 줄바꿈 */
-            text-align: justify;        /* 양끝 정렬 */
-            text-justify: inter-word;   /* 단어 사이 간격 최적화 */
-            line-height: 2;             /* 넉넉한 줄 간격 */
-            color: #334155;             /* slate-700 */
-        }
-
-        .bg-dark-navy { background-color: #0F172A; }
-        .text-led-white { color: #F8FAFC; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
-        
-        /* 모바일 최적화 여백 */
-        @media (max-width: 768px) {
-            .readable-contents { text-align: left; }
-        }
+        .bg-navy { background-color: #0A192F; }
+        .text-gold { color: #C5A059; }
     </style>
 </head>
-<body class="bg-slate-50">
+<body class="bg-gray-50 text-gray-800">
 
-    <nav class="bg-white shadow-md w-full z-[999] relative md:fixed top-0 border-b border-gray-200">
+    <nav class="bg-white shadow-md w-full z-[999] fixed top-0 border-b border-gray-200">
         <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
             <a href="index.html" class="flex items-center mb-4 md:mb-0">
                 <img src="logo.png" alt="청변 로고" class="h-12 w-auto">
             </a>
             <div class="flex flex-row items-center gap-8 font-bold text-slate-700">
-                <a href="about.html" class="py-2 text-blue-900 transition underline underline-offset-8 decoration-2">청변소개</a>
+                <a href="index.html" class="py-2 hover:text-blue-900 transition">홈으로</a>
+                <a href="about.html" class="py-2 text-blue-900 transition underline underline-offset-8">청변소개</a>
                 <a href="success.html" class="py-2 hover:text-blue-900 transition">성공사례</a>
             </div>
         </div>
     </nav>
 
-    <header class="bg-dark-navy pt-24 md:pt-48 pb-16 relative overflow-hidden">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-            <div class="order-2 md:order-1 relative flex justify-center">
-                <img src="투명사진.png" alt="김성찬 대표변호사" class="w-full max-w-md drop-shadow-[0_20px_50px_rgba(30,58,138,0.5)]">
-                <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-dark-navy to-transparent"></div>
+    <section class="pt-40 pb-20 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1 relative">
+                <div class="absolute -inset-4 bg-navy/5 rounded-2xl -z-10"></div>
+                <img src="투명사진.png" alt="김성찬 대표변호사" class="rounded-xl shadow-2xl w-full object-cover">
             </div>
-            <div class="order-1 md:order-2 text-center md:text-left space-y-6">
-                <p class="text-blue-400 font-bold tracking-widest text-sm uppercase">Law Firm Philosophy</p>
-                <h1 class="serif text-4xl md:text-6xl text-led-white font-bold leading-tight">
-                    “Fewer clients.<br>
-                    Less money.”
-                </h1>
-                <div class="h-1 w-20 bg-blue-600 mx-auto md:mx-0"></div>
-                <p class="text-slate-400 text-lg font-light break-keep">
-                    수익보다 가치에 집중하는 용기,<br class="hidden md:block">
-                    법률사무소 청변이 나아가는 단 하나의 방향입니다.
+
+            <div class="order-1 md:order-2 space-y-6">
+                <div class="space-y-2">
+                    <p class="text-blue-700 font-semibold tracking-widest uppercase text-sm italic">Jerry Maguire Philosophy</p>
+                    <h1 class="serif text-4xl md:text-5xl font-bold leading-tight text-navy">
+                        “Fewer clients.<br>
+                        <span class="text-blue-900">Less money.”</span>
+                    </h1>
+                </div>
+                <p class="text-lg text-gray-600 leading-relaxed font-light">
+                    영화 ‘제리 맥과이어’의 이 한 문장은 법률사무소 청변이 탄생한 이유이자, 의뢰인을 대하는 우리의 가장 강력한 약속입니다.
+                </p>
+                <div class="h-1 w-20 bg-blue-700"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-navy py-24 px-6 text-white">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <div class="space-y-6 leading-relaxed text-gray-300 text-lg">
+                <p>
+                    유능한 에이전트 제리 맥과이어는 수익보다 서비스의 질을 우선시하는 제안서를 썼다는 이유로 해고를 당합니다. 하지만 결국 단 한 명의 선수에게 집중하여 최고의 성공을 이끌어냈습니다.
+                </p>
+                <p class="text-white font-medium">
+                    법률사무소 청변 역시 마찬가지입니다. 대형 로펌에서의 수많은 경험은 값진 자산이었으나, 정해진 시간 속에서 의뢰인 한 분 한 분의 목소리를 충분히 담아내지 못하는 현실은 늘 아쉬움으로 남았습니다.
+                </p>
+                <p>
+                    우리는 그 아쉬움을 '정성'으로 채우기로 했습니다. 의뢰인이 제공해주신 작은 자료 하나까지 세심히 검토하고, 더 자주 소통하며 전략을 논의하는 <span class="text-gold font-bold">열정 넘치는 변호사</span>가 되고자 합니다.
                 </p>
             </div>
         </div>
-    </header>
+    </section>
 
-    <section class="py-24 bg-white px-6">
-        <div class="max-w-3xl mx-auto">
-            <div class="readable-contents space-y-12 text-[18px]">
-                
-                <p class="text-xl md:text-2xl font-bold text-slate-900 bg-slate-50 p-8 rounded-2xl border-l-8 border-blue-600">
-                    “Fewer clients. Less money.”<br>
-                    <span class="text-lg font-medium text-slate-600">톰 크루즈 주연의 ‘제리 맥과이어(1997)’에서 가장 중요한 메시지를 담고 있는 문구이자, 법률사무소 청변 개업의 가장 중요한 컨셉이기도 합니다.</span>
-                </p>
-
-                <p>
-                    유능한 스포츠 에이전트인 제리 맥과이어는 에이전트 한명당 너무나 많은 선수를 담당하여 제대로된 서비스를 제공해주지 못하는 회사의 현실에 아쉬움을 느끼고, 에이전트당 담당 선수를 줄여 서비스의 질을 대폭 향상시키고, 이 과정에서 어느정도의 수익은 포기하자는 내용의 제안서를 제출하였다가 갑작스러운 해고 통보를 받게 되고, 결국 자신을 믿어주던 단 한 명의 스포츠 선수하고만 에이전트 계약을 체결하게 됩니다.
-                </p>
-
-                <p>
-                    제리 맥과이어는 담당 선수의 모든 일정에 열정적으로 참여하는 한편, 담당 선수의 멘탈적인 부분까지 케어하며 자신이 작성한 제안서의 내용과 같이 담당 선수에 대한 최고의 서비스를 제공하기 위해 노력하였고, 결국 해당 선수의 엄청난 재계약을 성사시키며 영화는 해피엔딩으로 끝납니다.
-                </p>
-
-                <div class="py-8 border-y border-slate-100 my-16">
-                    <p class="font-bold text-slate-900 text-xl mb-6">법률사무소 청변 역시 마찬가지입니다.</p>
-                    <p>
-                        대형 로펌에서 근무하며 수많은 의뢰인들의 사건을 동시에 진행하며 많은 경험을 쌓은 것 역시 값진 시간이었으나, 너무나 바쁜 일정에 의뢰인분들과 좀 더 자주 소통하지 못하고, 각 사건에 대해 좀 더 세심히 들여다볼 여유가 없었다는 점이 항상 아쉬움으로 남았습니다.
-                    </p>
-                </div>
-
-                <p>
-                    이러한 아쉬움 끝에 좀 더 의뢰인분들과 자주 소통하고, 의뢰인분들이 제공해주신 자료들을 세심히 검토하는 열정 넘치는 변호사로 활동하고 싶다는 목적을 가지고 법률사무소 청변을 개업하게 되었습니다.
-                </p>
-
-                <p>
-                    영화나 드라마에서 다뤄지는 법률 사건들과 달리, 일상생활에서 대부분의 의뢰인들이 겪는 법률 사건은 매우 개인적이고, 감정적이며, 제대로된 증거조차 찾기 어려운 경우가 많습니다. 이런 사건들은 담당 변호사가 얼마나 해당 사건에 관심을 가지고 의뢰인과 소통하고, 또 얼마나 자주 의뢰인과 사건 해결을 위한 전략에 관하여 논의하였는지 여부에 따라 그 결과가 크게 달라집니다.
-                </p>
-
-                <div class="text-center py-12">
-                    <h2 class="serif text-2xl md:text-3xl font-bold text-blue-700 mb-6">
-                        "의뢰인에 대한 ‘정성’이 곧<br class="md:hidden"> ‘법률서비스의 품질’이라 믿습니다."
-                    </h2>
-                    <p class="leading-relaxed">
-                        법률사무소 청변은 의뢰인께 최대한의 정성으로 대하겠습니다. 한 번 찾아온 의뢰인이 다른 사건이나, 주변 사람의 사건까지 믿고 맡기실 수 있는 ‘믿을만한 변호사’가 될 수 있도록 의뢰인께 최고의 법률서비스를 제공하겠습니다.
-                    </p>
-                </div>
-
-                <p class="font-bold text-slate-900 text-lg pt-6 border-t border-slate-100">
-                    법률사무소 청변은 청년다운 열정과 패기, 그리고 대형로펌에서 쌓은 다양한 경험들을 토대로 의뢰인들께 최대한의 정성을, 최고의 법률서비스를 제공한다고 약속 드리겠습니다. 언제든 믿고 연락 주십시오.
-                </p>
-
-                <div class="text-right pt-10">
-                    <p class="serif text-2xl font-bold text-slate-900">감사합니다.</p>
-                    <p class="text-slate-500 mt-2">대표변호사 김성찬 올림</p>
-                </div>
-
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 border border-gray-200 rounded-2xl hover:shadow-lg transition group">
+                <div class="text-blue-700 mb-4 font-bold text-2xl">01</div>
+                <h3 class="text-xl font-bold mb-4 group-hover:text-blue-700 transition">개인적이고 감정적인 케어</h3>
+                <p class="text-gray-600 leading-relaxed">일상의 법률 사건은 단순히 법리로만 풀리지 않습니다. 의뢰인의 감정까지 살피는 세심한 접근이 필요합니다.</p>
+            </div>
+            <div class="p-8 border border-gray-200 rounded-2xl hover:shadow-lg transition group">
+                <div class="text-blue-700 mb-4 font-bold text-2xl">02</div>
+                <h3 class="text-xl font-bold mb-4 group-hover:text-blue-700 transition">철저한 증거와 소통</h3>
+                <p class="text-gray-600 leading-relaxed">담당 변호사가 얼마나 사건에 관심을 두느냐에 따라 결과는 달라집니다. 우리는 당신보다 더 당신의 사건을 고민합니다.</p>
+            </div>
+            <div class="p-8 border border-gray-200 rounded-2xl hover:shadow-lg transition group">
+                <div class="text-blue-700 mb-4 font-bold text-2xl">03</div>
+                <h3 class="text-xl font-bold mb-4 group-hover:text-blue-700 transition">품질을 결정하는 ‘정성’</h3>
+                <p class="text-gray-600 leading-relaxed">의뢰인에 대한 정성이 곧 법률 서비스의 품질입니다. 주변 지인에게 기꺼이 소개할 수 있는 '믿을만한 변호사'가 되겠습니다.</p>
             </div>
         </div>
     </section>
@@ -145,7 +112,7 @@
                     <h5 class="text-white font-bold text-lg mb-6">상담 문의</h5>
                     <p class="text-2xl font-bold text-white mb-2">010-9911-2793</p>
                     <p class="text-sm text-red-400 font-bold mb-1">● 24시간 연중무휴</p>
-                    <p class="text-sm mb-4 text-slate-500">새벽/주말/공휴일 언제든 가능</p>
+                    <p class="text-sm">새벽/주말/공휴일 언제든 가능</p>
                 </div>
             </div>
             <div class="border-t border-slate-800 pt-8 text-xs text-center text-slate-500">
