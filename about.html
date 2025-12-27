@@ -1,107 +1,222 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>법률사무소 청변 | 소개</title>
+    <title>청변소개 | 법률사무소 청변</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Pretendard:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Pretendard', sans-serif; word-break: keep-all; }
+        body { font-family: 'Pretendard', sans-serif; word-break: keep-all; letter-spacing: -0.02em; }
         .serif { font-family: 'Noto Serif KR', serif; }
         .bg-navy { background-color: #0A192F; }
+        .text-navy { color: #0A192F; }
         .text-gold { color: #C5A059; }
+        
+        /* 세련된 커리어 리스트 */
+        .career-list li { 
+            padding: 1.2rem 0; 
+            border-bottom: 1px solid #f3f4f6; 
+            display: flex; 
+            align-items: baseline;
+        }
+        .career-list li .label { 
+            font-weight: 700; 
+            width: 70px; 
+            flex-shrink: 0; 
+            color: #C5A059; 
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+        }
+        .career-list li .content { color: #374151; font-size: 1.1rem; font-weight: 400; }
+        .career-list li .sub-text { display: block; color: #9ca3af; font-size: 0.85rem; margin-top: 0.2rem; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-white text-gray-800">
 
-    <nav class="bg-white shadow-md w-full z-[999] fixed top-0 border-b border-gray-200">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-            <a href="index.html" class="flex items-center mb-4 md:mb-0">
-                <img src="logo.png" alt="청변 로고" class="h-12 w-auto">
+    <nav class="bg-white/90 backdrop-blur-md w-full z-[999] fixed top-0 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="청변 로고" class="h-10 w-auto">
             </a>
-            <div class="flex flex-row items-center gap-8 font-bold text-slate-700">
-                <a href="index.html" class="py-2 hover:text-blue-900 transition">홈으로</a>
-                <a href="about.html" class="py-2 text-blue-900 transition underline underline-offset-8">청변소개</a>
+            <div class="flex gap-10 font-bold text-slate-600 text-sm tracking-tighter">
+                <a href="index.html" class="hover:text-blue-900 transition">홈</a>
+                <a href="about.html" class="text-navy transition border-b-2 border-navy">청변소개</a>
                 <a href="success.html" class="py-2 hover:text-blue-900 transition">성공사례</a>
             </div>
         </div>
     </nav>
 
-    <section class="pt-40 pb-20 px-6 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1 relative">
-                <div class="absolute -inset-4 bg-navy/5 rounded-2xl -z-10"></div>
-                <img src="투명사진.png" alt="김성찬 대표변호사" class="rounded-xl shadow-2xl w-full object-cover">
+    <section class="pt-48 pb-24 px-6 max-w-4xl mx-auto">
+        <div class="space-y-20">
+            <div class="space-y-4 text-center">
+                <p class="text-blue-700 font-bold tracking-[0.4em] uppercase text-xs">Managing Attorney</p>
+                <h1 class="text-5xl md:text-6xl font-black text-navy tracking-tighter">김성찬</h1>
+                <p class="text-xl text-gray-400 font-light">법률사무소 청변 대표변호사</p>
+                <div class="w-12 h-[2px] bg-gold mx-auto mt-8"></div>
             </div>
 
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="space-y-2">
-                    <p class="text-blue-700 font-semibold tracking-widest uppercase text-sm italic">Jerry Maguire Philosophy</p>
-                    <h1 class="serif text-4xl md:text-5xl font-bold leading-tight text-navy">
-                        “Fewer clients.<br>
-                        <span class="text-blue-900">Less money.”</span>
-                    </h1>
+            <div class="space-y-10">
+                <h3 class="text-2xl font-bold text-navy border-b-2 border-navy pb-3 w-fit tracking-tighter">Professional History</h3>
+                <ul class="career-list">
+                    <li>
+                        <span class="label">現</span>
+                        <div class="content">
+                            <strong>법률사무소 청변</strong> 대표변호사
+                        </div>
+                    </li>
+                    <li>
+                        <span class="label">現</span>
+                        <div class="content">
+                            <strong>인천광역시교육청</strong> 학교폭력 제로센터 법률지원단 위촉위원
+                        </div>
+                    </li>
+                    <li>
+                        <span class="label">現</span>
+                        <div class="content">
+                            <strong>제12기 인천광역시</strong> 시민감사관
+                        </div>
+                    </li>
+                    <li>
+                        <span class="label">前</span>
+                        <div class="content">
+                            <strong>법무법인(유한) 대륜</strong> 
+                        </div>
+                    </li>
+                    <li>
+                        <span class="label">前</span>
+                        <div class="content">
+                            <strong>법무법인 로앤에이</strong> 
+                        </div>
+                    </li>
+                    <li>
+                        <span class="label">前</span>
+                        <div class="content">
+                            <strong>법률사무소 A&P</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="label">前</span>
+                        <div class="content">
+                            <strong>주식회사 KT</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="label">前</span>
+                        <div class="content">
+                            인도네시아 자카르타 <strong>PT.FCL</strong>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="py-16 text-center bg-navy rounded-[2rem] text-white shadow-2xl relative overflow-hidden !mt-24">
+                <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+                    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
                 </div>
-                <p class="text-lg text-gray-600 leading-relaxed font-light">
-                    영화 ‘제리 맥과이어’의 이 한 문장은 법률사무소 청변이 탄생한 이유이자, 의뢰인을 대하는 우리의 가장 강력한 약속입니다.
-                </p>
-                <div class="h-1 w-20 bg-blue-700"></div>
-            </div>
-        </div>
-    </section>
 
-    <section class="bg-navy py-24 px-6 text-white">
-        <div class="max-w-4xl mx-auto space-y-12">
-            <div class="space-y-6 leading-relaxed text-gray-300 text-lg">
-                <p>
-                    유능한 에이전트 제리 맥과이어는 수익보다 서비스의 질을 우선시하는 제안서를 썼다는 이유로 해고를 당합니다. 하지만 결국 단 한 명의 선수에게 집중하여 최고의 성공을 이끌어냈습니다.
-                </p>
-                <p class="text-white font-medium">
-                    법률사무소 청변 역시 마찬가지입니다. 대형 로펌에서의 수많은 경험은 값진 자산이었으나, 정해진 시간 속에서 의뢰인 한 분 한 분의 목소리를 충분히 담아내지 못하는 현실은 늘 아쉬움으로 남았습니다.
-                </p>
-                <p>
-                    우리는 그 아쉬움을 '정성'으로 채우기로 했습니다. 의뢰인이 제공해주신 작은 자료 하나까지 세심히 검토하고, 더 자주 소통하며 전략을 논의하는 <span class="text-gold font-bold">열정 넘치는 변호사</span>가 되고자 합니다.
+                <p class="serif text-2xl md:text-3xl italic leading-relaxed px-6">
+                    " 다양한 경험을 바탕으로 <strong class="text-gold"><br class="hidden md:block"> 
+                    의뢰인에게 최적의 서비스를 제공합니다."</strong>
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-8 border border-gray-200 rounded-2xl hover:shadow-lg transition group">
-                <div class="text-blue-700 mb-4 font-bold text-2xl">01</div>
-                <h3 class="text-xl font-bold mb-4 group-hover:text-blue-700 transition">개인적이고 감정적인 케어</h3>
-                <p class="text-gray-600 leading-relaxed">일상의 법률 사건은 단순히 법리로만 풀리지 않습니다. 의뢰인의 감정까지 살피는 세심한 접근이 필요합니다.</p>
+    <section id="about" class="py-32 bg-gray-50 border-t border-gray-100">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-20 space-y-4">
+                <span class="text-blue-600 font-black tracking-widest uppercase text-xs">Practice Areas</span>
+                <h2 class="text-4xl md:text-5xl font-black text-navy leading-tight break-keep">
+                    축적된 경험으로 해결하는 <span class="text-blue-600">전문분야</span>
+                </h2>
+                <div class="w-16 h-1 bg-gray-200 mx-auto mt-6"></div>
             </div>
-            <div class="p-8 border border-gray-200 rounded-2xl hover:shadow-lg transition group">
-                <div class="text-blue-700 mb-4 font-bold text-2xl">02</div>
-                <h3 class="text-xl font-bold mb-4 group-hover:text-blue-700 transition">철저한 증거와 소통</h3>
-                <p class="text-gray-600 leading-relaxed">담당 변호사가 얼마나 사건에 관심을 두느냐에 따라 결과는 달라집니다. 우리는 당신보다 더 당신의 사건을 고민합니다.</p>
-            </div>
-            <div class="p-8 border border-gray-200 rounded-2xl hover:shadow-lg transition group">
-                <div class="text-blue-700 mb-4 font-bold text-2xl">03</div>
-                <h3 class="text-xl font-bold mb-4 group-hover:text-blue-700 transition">품질을 결정하는 ‘정성’</h3>
-                <p class="text-gray-600 leading-relaxed">의뢰인에 대한 정성이 곧 법률 서비스의 품질입니다. 주변 지인에게 기꺼이 소개할 수 있는 '믿을만한 변호사'가 되겠습니다.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div class="container mx-auto px-6 text-center md:text-left">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="mb-6 flex justify-center md:justify-start">
-                        <img src="로고 세로.png" alt="법률사무소 청변" class="h-24 w-auto brightness-0 invert"> 
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                <a href="https://blog.naver.com/PostList.naver?blogId=cheong_byeon&from=postList&categoryNo=10" target="_blank" class="block p-12 rounded-[2rem] bg-white border border-gray-100 hover:border-blue-500 transition-all duration-500 group text-left shadow-sm hover:shadow-2xl hover:-translate-y-3">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                        <i class="fas fa-user-graduate"></i>
                     </div>
-                    <p class="text-sm mb-2">인천광역시 서구 가정로 451, 벨라미센텀시티2차 9층</p>
-                    <p class="text-sm mb-2">대표변호사: 김성찬 | 광고책임변호사: 김성찬</p>
-                    <p class="text-sm mb-2">사업자등록번호: 595-78-00598</p>
+                    <h3 class="text-2xl font-bold mb-4 text-navy flex items-center justify-between">
+                        학교폭력 
+                        <i class="fas fa-arrow-right text-xs text-slate-200 group-hover:text-blue-500 transition-colors"></i>
+                    </h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed font-light">
+                        피해 학생 보호 및 가해 학생 징계 불복 등 아이의 미래가 걸린 문제에 대해 세심한 법률 조력을 제공합니다.
+                    </p>
+                </a>
+
+                <a href="https://blog.naver.com/PostList.naver?blogId=cheong_byeon&from=postList&categoryNo=14" target="_blank" class="block p-12 rounded-[2rem] bg-white border border-gray-100 hover:border-blue-500 transition-all duration-500 group text-left shadow-sm hover:shadow-2xl hover:-translate-y-3">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-navy flex items-center justify-between">
+                        민사 / 부동산
+                        <i class="fas fa-arrow-right text-xs text-slate-200 group-hover:text-blue-500 transition-colors"></i>
+                    </h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed font-light">
+                        임대차 분쟁, 명도 소송, 손해배상 등 소중한 재산권을 지키기 위해 명확한 법리 분석으로 대응합니다.
+                    </p>
+                </a>
+
+                <a href="https://blog.naver.com/PostList.naver?blogId=cheong_byeon&from=postList&categoryNo=15" target="_blank" class="block p-12 rounded-[2rem] bg-white border border-gray-100 hover:border-blue-500 transition-all duration-500 group text-left shadow-sm hover:shadow-2xl hover:-translate-y-3">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                        <i class="fas fa-handcuffs"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-navy flex items-center justify-between">
+                        형사 사건
+                        <i class="fas fa-arrow-right text-xs text-slate-200 group-hover:text-blue-500 transition-colors"></i>
+                    </h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed font-light">
+                        경찰 조사 단계부터 재판까지. 억울함이 없도록 골든타임을 놓치지 않고 적극적으로 변호합니다.
+                    </p>
+                </a>
+
+                <a href="https://blog.naver.com/PostList.naver?blogId=cheong_byeon&from=postList&categoryNo=13" target="_blank" class="block p-12 rounded-[2rem] bg-white border border-gray-100 hover:border-blue-500 transition-all duration-500 group text-left shadow-sm hover:shadow-2xl hover:-translate-y-3">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                        <i class="fas fa-heart-broken"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-navy flex items-center justify-between">
+                        가사 / 이혼
+                        <i class="fas fa-arrow-right text-xs text-slate-200 group-hover:text-blue-500 transition-colors"></i>
+                    </h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed font-light">
+                        이혼, 재산분할, 양육권 등 가정 내 분쟁을 의뢰인의 마음까지 헤아리며 차분하게 풀어갑니다.
+                    </p>
+                </a>
+
+                <a href="https://blog.naver.com/PostList.naver?blogId=cheong_byeon&from=postList&categoryNo=16" target="_blank" class="block p-12 rounded-[2rem] bg-white border border-gray-100 hover:border-blue-500 transition-all duration-500 group text-left shadow-sm hover:shadow-2xl hover:-translate-y-3">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-navy flex items-center justify-between">
+                        행정 사건
+                        <i class="fas fa-arrow-right text-xs text-slate-200 group-hover:text-blue-500 transition-colors"></i>
+                    </h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed font-light">
+                        영업정지, 면허취소 등 부당한 행정 처분에 맞서 집행정지 신청부터 행정소송까지 체계적으로 대응합니다.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-500 py-20 border-t border-white/5">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2 space-y-8">
+                    <img src="로고 세로.png" alt="법률사무소 청변" class="h-20 w-auto brightness-0 invert opacity-60 mx-auto md:mx-0"> 
+                    <div class="space-y-2 text-sm font-light leading-relaxed">
+                        <p>인천광역시 서구 가정로 451, 벨라미센텀시티2차 9층</p>
+                        <p>대표변호사: 김성찬 | 광고책임변호사: 김성찬</p>
+                        <p>사업자등록번호: 595-78-00598</p>
+                    </div>
                 </div>
                 <div>
                     <h5 class="text-white font-bold text-lg mb-6">주요 업무</h5>
-                    <ul class="text-sm space-y-3">
+                    <ul class="text-sm space-y-4 font-light">
                         <li>학교폭력 / 행정소송</li>
                         <li>부동산 / 민사 분쟁</li>
                         <li>형사 사건 (24시 대응)</li>
@@ -110,13 +225,14 @@
                 </div>
                 <div>
                     <h5 class="text-white font-bold text-lg mb-6">상담 문의</h5>
-                    <p class="text-2xl font-bold text-white mb-2">010-9911-2793</p>
-                    <p class="text-sm text-red-400 font-bold mb-1">● 24시간 연중무휴</p>
-                    <p class="text-sm">새벽/주말/공휴일 언제든 가능</p>
+                    <div class="space-y-4">
+                        <p class="text-3xl font-black text-white tracking-tighter">010-9911-2793</p>
+                        <p class="text-sm text-red-400 font-bold tracking-widest">● 24시간 연중무휴</p>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-slate-800 pt-8 text-xs text-center text-slate-500">
-                <p>© 2024 Law Firm CheongByeon. All rights reserved.</p>
+            <div class="border-t border-white/5 pt-8 text-[12px] text-center opacity-40">
+                <p>© 2025 Law Firm CheongByeon. All rights reserved.</p>
             </div>
         </div>
     </footer>
