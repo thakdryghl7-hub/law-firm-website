@@ -3,386 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>대표 성공사례 50선 | 법률사무소 청변</title>
+    
+    <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="/favicon.jpg">
+    <title>성공사례 | 법률사무소 청변</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
     <style>
-        body { font-family: 'Noto Sans KR', sans-serif; letter-spacing: -0.02em; }
+        body { font-family: 'Noto Sans KR', sans-serif; word-break: keep-all; letter-spacing: -0.03em; }
         .break-keep { word-break: keep-all; }
-        .case-card { transition: all 0.3s ease; }
-        .case-card:hover { transform: translateY(-8px); border-color: #2563eb; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .bg-navy { background-color: #0A192F; }
+        
+        .tab-btn { transition: all 0.2s ease; border-bottom: 3px solid transparent; }
+        .tab-btn.active { font-weight: 900; }
+        .tab-civil.active { color: #2563eb; border-bottom-color: #2563eb; }
+        .tab-criminal.active { color: #334155; border-bottom-color: #334155; }
+        .tab-family.active { color: #ec4899; border-bottom-color: #ec4899; }
+        .tab-admin.active { color: #d97706; border-bottom-color: #d97706; }
+
+        .case-card { 
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background: white; border: 1px solid #f1f5f9; height: 100%;
+        }
+        .case-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+        }
+
+        .judgment-img-wrapper {
+            position: relative; overflow: hidden; background-color: #f8fafc;
+            aspect-ratio: 1 / 1.25; padding: 1.2rem; display: flex;
+            align-items: center; justify-content: center; border-bottom: 1px solid #f1f5f9;
+        }
+        .judgment-img-wrapper img {
+            width: 100%; height: 100%; object-fit: contain; object-position: top;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+        }
+
+        .theme-civil { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); }
+        .theme-criminal { background: linear-gradient(135deg, #1e293b 0%, #475569 100%); }
+        .theme-family { background: linear-gradient(135deg, #be185d 0%, #db2777 100%); }
+        .theme-admin { background: linear-gradient(135deg, #b45309 0%, #d97706 100%); }
+
+        .result-badge {
+            position: absolute; top: 0; right: 0; color: white; padding: 0.45rem 0.85rem;
+            border-bottom-left-radius: 1rem; font-weight: 900; font-size: 0.8rem; z-index: 10;
+        }
+
+        .swiper-container { padding: 10px 5px 60px 5px; cursor: grab; }
+        .swiper-container:active { cursor: grabbing; }
+        .swiper-scrollbar { background: rgba(0,0,0,0.05); height: 4px !important; }
+        .swiper-scrollbar-drag { background: #cbd5e1; }
+        
+        #imageModal {
+            display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.95);
+            z-index: 9999; align-items: center; justify-content: center; padding: 20px;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-gray-50 text-gray-800">
 
 <nav class="bg-white shadow-md w-full z-[999] fixed top-0 border-b border-gray-200">
     <div class="container mx-auto px-4 py-3 md:py-4 flex flex-col md:flex-row justify-between items-center">
-        
         <a href="index.html" class="flex items-center mb-3 md:mb-0">
             <img src="logo.png" alt="청변 로고" class="h-8 md:h-12 w-auto">
         </a>
-
         <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 md:gap-8 font-bold text-slate-700 text-sm md:text-base">
             <a href="index.html" class="py-1 md:py-2 hover:text-blue-900 transition">홈</a>
-            
             <a href="about.html" class="py-1 md:py-2 hover:text-blue-900 transition">청변소개</a>
-            
             <a href="success.html" class="py-1 md:py-2 text-blue-900 transition underline underline-offset-4 md:underline-offset-8">성공사례</a>
-            
             <a href="https://blog.naver.com/cheong_byeon" target="_blank" class="py-1 md:py-2 hover:text-blue-900 transition">청변 블로그</a>
-            
-            <a href="contact.html" class="py-1.5 px-3 md:py-2 md:px-4 bg-blue-900 text-white rounded-lg hover:bg-navy transition shadow-sm text-xs md:text-base">상담신청</a>
+            <a href="contact.html" class="py-1.5 px-3 md:py-2 md:px-4 bg-blue-900 text-white rounded-lg hover:bg-navy transition shadow-sm text-xs md:text-base font-bold">상담신청</a>
         </div>
     </div>
 </nav>
 
-    <section class="bg-slate-900 pt-32 pb-20 md:pt-48 md:pb-32 text-center relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="inline-block py-1 px-4 bg-blue-600/20 border border-blue-500/30 rounded-full text-blue-400 text-sm font-bold mb-6 tracking-widest uppercase">
-                50 Selected Success Records
-            </div>
-            <h1 class="text-4xl md:text-6xl font-black text-white mb-8 leading-tight tracking-tight break-keep">
-                결과로 증명하는 <span class="text-blue-400">청변의 실력</span><br>
-                <span class="text-white text-2xl md:text-4xl opacity-80 font-light">엄선된 대표 성공사례 50선</span>
-            </h1>
-            <p class="text-slate-400 text-lg md:text-xl font-light max-w-4xl mx-auto break-keep leading-relaxed">
-                “법률서비스의 품질은 '정성'에서 비롯됩니다.”<br>
-                단순한 숫자가 아닌 의뢰인의 삶을 바꾼 50가지의 기록. <br class="hidden md:block"> 
-                청변의 집요함과 진심이 담긴 대표 승소 사례들을 보고드립니다.
-            </p>
+<section class="bg-navy pt-48 pb-24 text-center relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="inline-block py-1 px-4 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-400 text-xs md:text-sm font-bold mb-6 tracking-widest uppercase">
+            Success Records
         </div>
-    </section>
-
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            
-            <div class="mb-20">
-                <h2 class="text-2xl font-bold text-slate-900 mb-10 flex items-center gap-3">
-                    <span class="w-1.5 h-8 bg-blue-600 rounded-full"></span> 민사 / 부동산 / 각종 분쟁
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#01 전부 승소</div>
-                        <h4 class="font-bold mb-2">인천관광공사 상대 임대차 확인 승소</h4>
-                        <p class="text-slate-600 text-sm font-light">부당한 계약해지 주장에 대응하여 임차인의 권리 완벽 소명</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#02 전액 회수</div>
-                        <h4 class="font-bold mb-2">지주택 가입계약 무효 및 1.4억 반환</h4>
-                        <p class="text-slate-600 text-sm font-light">조합의 기망행위를 입증하여 분담금 및 지연이자 전액 확보</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#03 전부 기각</div>
-                        <h4 class="font-bold mb-2">사해행위취소 3.7억 청구 방어 승소</h4>
-                        <p class="text-slate-600 text-sm font-light">증여 당시 수익자의 선의를 입증하여 원고 청구 기각</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#04 90% 감액</div>
-                        <h4 class="font-bold mb-2">공사대금 지체상금 90% 감액 방어</h4>
-                        <p class="text-slate-600 text-sm font-light">상대측 귀책사유를 입증하여 막대한 손해배상액을 감액</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#05 전부 승소</div>
-                        <h4 class="font-bold mb-2">임대차보증금 3.1억 무변론 판결 승소</h4>
-                        <p class="text-slate-600 text-sm font-light">신속한 법적 조치로 임대인의 보증금 반환 의무 확정</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#06 전부 기각</div>
-                        <h4 class="font-bold mb-2">영업양도 미해당 및 경업금지 방어</h4>
-                        <p class="text-slate-600 text-sm font-light">단순 점포 인수를 영업양도로 볼 수 없음을 입증하여 승소</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#07 전부 승소</div>
-                        <h4 class="font-bold mb-2">빌라 전세사기 임대인들 공동책임 인정</h4>
-                        <p class="text-slate-600 text-sm font-light">복수의 임대인을 상대로 보증금 7,700만원 반환 판결</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#08 전부 기각</div>
-                        <h4 class="font-bold mb-2">보이스피싱 연루 계좌 부당이득금 방어</h4>
-                        <p class="text-slate-600 text-sm font-light">선의의 명의자로서 민사상 책임이 없음을 소명하여 승소</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#09 전부 승소</div>
-                        <h4 class="font-bold mb-2">자동차 교통사고 손해배상 청구 승소</h4>
-                        <p class="text-slate-600 text-sm font-light">인적/물적 피해액에 대한 정당한 배상금 산정 및 확보</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#10 전부 승소</div>
-                        <h4 class="font-bold mb-2">건물인도 및 연체 차임 청구 전부 승소</h4>
-                        <p class="text-slate-600 text-sm font-light">월세 연체 임차인을 상대로 부동산 인도 및 금전 채권 확보</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#11 전부 승소</div>
-                        <h4 class="font-bold mb-2">소유권이전등기 청구 방어 승소</h4>
-                        <p class="text-slate-600 text-sm font-light">법적 근거 없는 소유권 주장으로부터 의뢰인의 등기 보호</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#12 조정 성립</div>
-                        <h4 class="font-bold mb-2">차량 렌트/매입 대금 채무부존재 조정</h4>
-                        <p class="text-slate-600 text-sm font-light">복잡한 채권관계를 정리하여 유리한 조건으로 분쟁 종결</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#13 인용 결정</div>
-                        <h4 class="font-bold mb-2">CCTV 삭제 전 긴급 증거보전 성공</h4>
-                        <p class="text-slate-600 text-sm font-light">소송 핵심 증거인 영상의 멸실을 막아 법적 우위 점유</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#14 전부 승소</div>
-                        <h4 class="font-bold mb-2">임대차보증금 1.7억 원 반환 판결</h4>
-                        <p class="text-slate-600 text-sm font-light">계약해지 효력을 부인하는 임대인 상대로 전부 승소</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#15 전부 승소</div>
-                        <h4 class="font-bold mb-2">임대차보증금 1.58억 원 반환 확정</h4>
-                        <p class="text-slate-600 text-sm font-light">지연손해금과 함께 보증금 전액에 대한 집행권원 확보</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#16 전부 기각</div>
-                        <h4 class="font-bold mb-2">불법행위 부당이득금 손배 청구 방어</h4>
-                        <p class="text-slate-600 text-sm font-light">명의 대여가 불법 가담이 아님을 입증하여 청구 기각</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#17 조정 성립</div>
-                        <h4 class="font-bold mb-2">공사대금 잔금 청구 금액 조정 성공</h4>
-                        <p class="text-slate-600 text-sm font-light">법리 다툼이 치열한 공사 현장에서 실익 위주의 합의 도출</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-blue-600 font-bold text-xs mb-2">#18 전부 승소</div>
-                        <h4 class="font-bold mb-2">상가 권리금 회수 방해 손해배상 승소</h4>
-                        <p class="text-slate-600 text-sm font-light">임대인의 방해 행위를 입증하여 임차인의 권리금 손실 보전</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-20">
-                <h2 class="text-2xl font-bold text-slate-900 mb-10 flex items-center gap-3">
-                    <span class="w-1.5 h-8 bg-slate-700 rounded-full"></span> 형사 사건 
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#19 원심 파기</div>
-                        <h4 class="font-bold mb-2">6억 원대 업무상배임 항소심 집유 선고</h4>
-                        <p class="text-slate-600 text-sm font-light">1심 실형을 파기하고 피해 회사와 합의 유도하여 집유 확보</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#20 불송치</div>
-                        <h4 class="font-bold mb-2">강제추행 및 협박 혐의 경찰 단계 종결</h4>
-                        <p class="text-slate-600 text-sm font-light">고소인 주장의 허구성을 밝혀 혐의없음(불송치) 도출</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#21 집행유예</div>
-                        <h4 class="font-bold mb-2">보이스피싱 현금인출책 실형 위기 방어</h4>
-                        <p class="text-slate-600 text-sm font-light">미필적 고의의 부존재를 소명하여 법정 구속 면제</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#22 기소유예</div>
-                        <h4 class="font-bold mb-2">준강제추행 초범 성실 반성 기소유예</h4>
-                        <p class="text-slate-600 text-sm font-light">피해자와의 합의와 재범 방지 노력을 입증하여 선처</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#23 집행유예</div>
-                        <h4 class="font-bold mb-2">미성년자의제강간 혐의 집행유예 선고</h4>
-                        <p class="text-slate-600 text-sm font-light">엄중한 사안에서 양형 사유의 전략적 소명으로 구제</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#24 집행유예</div>
-                        <h4 class="font-bold mb-2">음주운전 치상 및 측정거부 실형 방어</h4>
-                        <p class="text-slate-600 text-sm font-light">최악의 정상에서도 피해 회복과 합의를 통해 집유 성공</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#25 기소유예</div>
-                        <h4 class="font-bold mb-2">아동복지시설 종사자 아동학대 기소유예</h4>
-                        <p class="text-slate-600 text-sm font-light">취업 제한 위기에서 훈육 목적의 우발성 입증</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#26 기소유예</div>
-                        <h4 class="font-bold mb-2">단순 절도 범행 성실 반성 및 기소유예</h4>
-                        <p class="text-slate-600 text-sm font-light">전과를 피하기 위한 신속한 합의 및 선처 호소 성공</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#27 기소유예</div>
-                        <h4 class="font-bold mb-2">공연음란 사건 기소유예 처분 도출</h4>
-                        <p class="text-slate-600 text-sm font-light">정신적 병증 소명 및 치료 의지 피력으로 종결</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#28 송치 결정</div>
-                        <h4 class="font-bold mb-2">6,000만원대 사기 사건 고소 대리 성공</h4>
-                        <p class="text-slate-600 text-sm font-light">가해자의 변제 의사 없음을 입증하여 기소 의견 송치</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#29 집행유예</div>
-                        <h4 class="font-bold mb-2">음주운전 및 특수재물손괴 병합 집유</h4>
-                        <p class="text-slate-600 text-sm font-light">죄질이 불량한 경합 사안에서 실형 위기 극복</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#30 송치 결정</div>
-                        <h4 class="font-bold mb-2">82회 스토킹 및 괴롭힘 혐의 송치</h4>
-                        <p class="text-slate-600 text-sm font-light">장기간의 피해 사실 채증을 통한 강력한 법적 대응</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#31 집행유예</div>
-                        <h4 class="font-bold mb-2">통신매체이용음란 및 성착취물 방어</h4>
-                        <p class="text-slate-600 text-sm font-light">N번방 이후 강화된 성범죄 처벌 수위에도 집유 선고</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#32 집행유예</div>
-                        <h4 class="font-bold mb-2">강제추행 혐의 공탁 및 선처 유도 성공</h4>
-                        <p class="text-slate-600 text-sm font-light">피해자 측과 원만하지 못한 상황에서 공탁으로 형량 방어</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-slate-500 font-bold text-xs mb-2">#33 불송치</div>
-                        <h4 class="font-bold mb-2">청소년보호법 위반 혐의 각하 종결</h4>
-                        <p class="text-slate-600 text-sm font-light">경찰 단계에서 무리한 고소 내용을 반박하여 종결</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-20">
-                <h2 class="text-2xl font-bold text-slate-900 mb-10 flex items-center gap-3">
-                    <span class="w-1.5 h-8 bg-pink-500 rounded-full"></span> 가사 / 상속 / 각종 심판
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-pink-600 font-bold text-xs mb-2">#34 조정 성립</div>
-                        <h4 class="font-bold mb-2">유류분반환 청구 9,000만 원 확보</h4>
-                        <p class="text-slate-600 text-sm font-light">상속 재산 제외 원고 대리하여 정당한 몫 확보 성공</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-pink-600 font-bold text-xs mb-2">#35 심판 수리</div>
-                        <h4 class="font-bold mb-2">특별한정승인 수리 (사망 1년 후 인지)</h4>
-                        <p class="text-slate-600 text-sm font-light">연락 끊긴 부모님의 억대 채무 상속으로부터 자녀 보호</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-pink-600 font-bold text-xs mb-2">#36 전부 승소</div>
-                        <h4 class="font-bold mb-2">이혼 위자료 및 기여도 50% 재산분할</h4>
-                        <p class="text-slate-600 text-sm font-light">배우자 폭력성 입증으로 유리한 판결 도출</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-pink-600 font-bold text-xs mb-2">#37 전부 승소</div>
-                        <h4 class="font-bold mb-2">상간녀 손해배상 청구 3,000만 원 승소</h4>
-                        <p class="text-slate-600 text-sm font-light">부정행위 증거 채증 통해 혼인 파탄 책임 규명</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-pink-600 font-bold text-xs mb-2">#38 전부 기각</div>
-                        <h4 class="font-bold mb-2">억울한 상간 손해배상 소송 방어 승소</h4>
-                        <p class="text-slate-600 text-sm font-light">증거 부족 및 부정행위 미성립을 소명하여 기각</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-pink-600 font-bold text-xs mb-2">#39 선임 결정</div>
-                        <h4 class="font-bold mb-2">성년후견 개시 및 후견인 선임 성공</h4>
-                        <p class="text-slate-600 text-sm font-light">정신적 제약 있는 가족 보호를 위한 후견 개시</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-pink-600 font-bold text-xs mb-2">#40 허가 결정</div>
-                        <h4 class="font-bold mb-2">자의 성과 본 변경 허가 (성본 변경)</h4>
-                        <p class="text-slate-600 text-sm font-light">아이의 복리와 안정적인 성장을 위한 성 변경 성공</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-pink-600 font-bold text-xs mb-2">#41 심판 수리</div>
-                        <h4 class="font-bold mb-2">6,600만 원대 상속 채무 한정승인 성공</h4>
-                        <p class="text-slate-600 text-sm font-light">예상치 못한 부모님 빚으로부터 가족의 자산 보호</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-pink-600 font-bold text-xs mb-2">#42 인용 결정</div>
-                        <h4 class="font-bold mb-2">상간 증거 확보 위한 CCTV 증거보전</h4>
-                        <p class="text-slate-600 text-sm font-light">삭제 임박한 주거지 출입 영상의 법원 확보 성공</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-pink-600 font-bold text-xs mb-2">#43 화해 권고</div>
-                        <h4 class="font-bold mb-2">이혼 재산분할 및 양육권 화해 유도</h4>
-                        <p class="text-slate-600 text-sm font-light">소송 장기화 방지 및 의뢰인 실익 위주의 조정</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-20">
-                <h2 class="text-2xl font-bold text-slate-900 mb-10 flex items-center gap-3">
-                    <span class="w-1.5 h-8 bg-yellow-500 rounded-full"></span> 학교폭력 / 노동 / 행정
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-yellow-600 font-bold text-xs mb-2">#44 처분 취소</div>
-                        <h4 class="font-bold mb-2">절차 하자를 이유로 한 학폭 처분 취소</h4>
-                        <p class="text-slate-600 text-sm font-light">변호인 진술권 침해 바로잡아 학생의 불이익 제거</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-yellow-600 font-bold text-xs mb-2">#45 전부 기각</div>
-                        <h4 class="font-bold mb-2">간호사 직장 내 괴롭힘 손배 청구 방어</h4>
-                        <p class="text-slate-600 text-sm font-light">업무상 지시의 정당성 입증하여 병원 측 보호 성공</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-yellow-600 font-bold text-xs mb-2">#46 조치 없음</div>
-                        <h4 class="font-bold mb-2">학폭위 증거불충분 무죄(조치없음) 결정</h4>
-                        <p class="text-slate-600 text-sm font-light">쌍방 신고 사건에서 의뢰 학생의 일방적 무고함 입증</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-yellow-600 font-bold text-xs mb-2">#47 합의 성립</div>
-                        <h4 class="font-bold mb-2">산재 사망사고 유족 대리 2억 합의</h4>
-                        <p class="text-slate-600 text-sm font-light">건설현장 매몰 사고 유족 대리하여 회사와의 합의 성공</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-yellow-600 font-bold text-xs mb-2">#48 처분 감경</div>
-                        <h4 class="font-bold mb-2">경찰공무원 징계 소청심사 감경</h4>
-                        <p class="text-slate-600 text-sm font-light">우월적 지위 이용 징계에서 20년 복무 정상 참작 성공</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-yellow-600 font-bold text-xs mb-2">#49 전부 기각</div>
-                        <h4 class="font-bold mb-2">부당해고 및 해고무효확인 청구 방어</h4>
-                        <p class="text-slate-600 text-sm font-light">사용자 대리하여 해고 절차의 정당성 인정 승소</p>
-                    </div>
-                    <div class="case-card p-6 rounded-xl bg-slate-50 border border-slate-100">
-                        <div class="text-yellow-600 font-bold text-xs mb-2">#50 전부 승소</div>
-                        <h4 class="font-bold mb-2">음주 면허 취소 행정심판 정지로 감경</h4>
-                        <p class="text-slate-600 text-sm font-light">생계 유지 절박함 소명하여 면허 취소 처분 구제</p>
-                    </div>
-                </div>
-            </div>
-
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-10 tracking-tight break-keep leading-tight">
+            결과로 증명하는 <span class="text-blue-400">청변의 실력</span>
+        </h1>
+        <div class="text-gray-300 text-lg md:text-xl font-light max-w-3xl mx-auto break-keep leading-relaxed space-y-2 mb-10">
+            <p>단순한 기록이 아닌 의뢰인의 삶을 바꾼 <span class="text-white font-medium">정성의 결과</span></p>
+            <p>청변의 집요함과 진심이 담긴 실제 승소 사례들을 소개합니다.</p>
+            <p class="text-blue-400 font-bold text-xl md:text-2xl mt-4 tracking-tighter">다음은 여러분의 차례입니다</p>
         </div>
-    </section>
+        <div class="w-12 h-1 bg-blue-500 mx-auto mb-8"></div>
+        <p class="text-white font-medium text-xl md:text-2xl italic tracking-tight">
+            “법률서비스의 품질은 <span class="text-blue-400">'정성'</span>에서 비롯됩니다.”
+        </p>
+    </div>
+</section>
 
-    <section class="py-24 bg-slate-900 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-5xl font-black mb-8 break-keep leading-tight">
-                기록은 <span class="text-blue-400">거짓말</span>을 하지 않습니다.<br>
-                당신의 <span class="text-blue-400">성공의 기록</span>을 이어갑니다.
-            </h2>
-            <p class="text-slate-400 mb-12 font-light text-lg">
-                수많은 성공사례들을 기반으로 의뢰인에게 최적의 서비스를 제공합니다.<br>
-                어떤 어려운 상황이라도 청변의 <span class="text-white font-bold">'정성'</span>이 닿으면 답은 반드시 있습니다.
-            </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="tel:010-9911-2793" class="px-12 py-6 bg-blue-600 rounded-xl font-black hover:bg-blue-700 transition shadow-2xl text-xl transform hover:scale-105">
-                    <i class="fas fa-phone-alt mr-3"></i> 대표변호사 24시 직통상담
-                </a>
-                <a href="index.html" class="px-12 py-6 bg-slate-800 rounded-xl font-black hover:bg-slate-700 transition border border-slate-700 text-xl">
-                    메인 홈페이지로 돌아가기
-                </a>
+<nav class="sticky top-[72px] md:top-[81px] z-[100] bg-white border-b border-gray-200 shadow-sm">
+    <div class="container mx-auto px-4 text-center">
+        <div class="flex justify-center md:gap-12 overflow-x-auto whitespace-nowrap scrollbar-hide">
+            <button onclick="filterCategory('civil')" class="tab-btn tab-civil px-6 py-5 text-sm md:text-base font-bold active" id="btn-civil">민사/부동산</button>
+            <button onclick="filterCategory('criminal')" class="tab-btn tab-criminal px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-criminal">형사사건</button>
+            <button onclick="filterCategory('family')" class="tab-btn tab-family px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-family">가사/상속</button>
+            <button onclick="filterCategory('admin')" class="tab-btn tab-admin px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-admin">학폭/노동/행정</button>
+        </div>
+    </div>
+</nav>
+
+<section class="py-24 bg-white overflow-hidden">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-wrap justify-between items-center mb-12 gap-y-4">
+            <div class="flex items-center gap-4">
+                <span id="category-bar" class="w-2 h-10 rounded-full bg-blue-600 transition-none"></span>
+                <h3 id="category-title" class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">민사 / 부동산 / 분쟁</h3>
+            </div>
+            <div class="hidden md:flex gap-3">
+                <button id="prev-btn-theme" class="prev-btn w-12 h-12 border border-slate-200 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-all shadow-sm"><i class="fas fa-arrow-left text-sm"></i></button>
+                <button id="next-btn-theme" class="next-btn w-12 h-12 border border-slate-200 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-all shadow-sm"><i class="fas fa-arrow-right text-sm"></i></button>
             </div>
         </div>
-    </section>
 
-    <footer class="bg-slate-900 text-slate-500 py-12 border-t border-slate-800">
-        <div class="container mx-auto px-6 text-center md:text-left text-xs">
-            <div class="mb-8">
-                <img src="logo.png" alt="청변" class="h-8 w-auto mb-4 brightness-0 invert opacity-50 mx-auto md:mx-0">
-                <p class="mb-2">인천광역시 서구 가정로 451, 벨라미센텀시티2차 9층 | 대표변호사: 김성찬</p>
-                <p>© 2025 Law Firm CheongByeon. All rights reserved.</p>
+        <div class="swiper case-swiper swiper-container">
+            <div class="swiper-wrapper" id="swiper-wrapper">
+                </div>
+            <div class="swiper-scrollbar mt-12"></div>
+            <div class="swiper-pagination md:hidden mt-10"></div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-slate-900 text-slate-500 py-16 border-t border-white/5">
+    <div class="container mx-auto px-6 text-center md:text-left">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="col-span-1 md:col-span-2 space-y-6">
+                <img src="로고 세로.png" alt="법률사무소 청변" class="h-24 w-auto brightness-0 invert opacity-80 mx-auto md:mx-0"> 
+                <div class="space-y-2 text-sm leading-relaxed text-slate-400">
+                    <p>인천광역시 서구 가정로 451, 벨라미센텀시티2차 9층</p>
+                    <p>대표변호사: 김성찬 | 광고책임변호사: 김성찬</p>
+                    <p>사업자등록번호: 595-78-00598</p>
+                </div>
+                <div class="flex space-x-4 justify-center md:justify-start">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 transition text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 transition text-white"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-lg mb-6 tracking-tight">주요 업무</h5>
+                <ul class="text-sm space-y-4 font-light text-slate-400">
+                    <li>학교폭력 / 행정소송</li>
+                    <li>부동산 / 민사 분쟁</li>
+                    <li>형사 사건 (24시 대응)</li>
+                    <li>이혼 / 가사 소송</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-lg mb-6 tracking-tight">상담 문의</h5>
+                <div class="space-y-4">
+                    <p class="text-2xl font-bold text-white tracking-tighter">010-9911-2793</p>
+                    <p class="text-sm text-red-400 font-bold">● 24시간 연중무휴</p>
+                    <p class="text-sm font-light text-slate-400">새벽/주말/공휴일 언제든 가능</p>
+                </div>
             </div>
         </div>
-    </footer>
+        <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-slate-500">
+            <p>© 2025 Law Firm CheongByeon. All rights reserved.</p>
+            <div class="space-x-6">
+                <a href="#" class="hover:text-white transition">이용약관</a>
+                <a href="#" class="hover:text-white font-bold transition">개인정보처리방침</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="imageModal" onclick="this.style.display='none'">
+    <img id="modalImg" src="" class="max-w-full max-h-[90vh] rounded shadow-2xl transition-transform duration-300">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    const cases = [
+        { id: '01', type: 'civil', badge: '전부 승소', title: '인천관광공사 상대 임대차 확인 승소', desc: '부당한 계약해지 주장에 대응하여 임차인의 권리 완벽 소명' },
+        { id: '02', type: 'civil', badge: '전액 회수', title: '지주택 가입계약 무효 및 1.4억 반환', desc: '조합의 기망행위를 입증하여 분담금 및 지연이자 전액 확보' },
+        { id: '03', type: 'civil', badge: '전부 기각', title: '사해행위취소 3.7억 청구 방어 승소', desc: '증여 당시 수익자의 선의를 입증하여 원고 청구 기각' },
+        { id: '04', type: 'civil', badge: '90% 감액', title: '공사대금 지체상금 90% 감액 방어', desc: '상대측 귀책사유를 입증하여 막대한 손해배상액을 감액' },
+        { id: '05', type: 'civil', badge: '전부 승소', title: '임대차보증금 3.1억 무변론 판결 승소', desc: '신속한 법적 조치로 임대인의 보증금 반환 의무 확정' },
+        { id: '06', type: 'civil', badge: '전부 기각', title: '영업양도 미해당 및 경업금지 방어', desc: '단순 점포 인수를 영업양도로 볼 수 없음을 입증하여 승소' },
+        { id: '07', type: 'civil', badge: '전부 승소', title: '빌라 전세사기 임대인들 공동책임 인정', desc: '복수의 임대인을 상대로 보증금 7,700만원 반환 판결' },
+        { id: '08', type: 'civil', badge: '전부 기각', title: '보이스피싱 연루 계좌 부당이득금 방어', desc: '선의의 명의자로서 민사상 책임이 없음을 소명하여 승소' },
+        { id: '09', type: 'civil', badge: '전부 승소', title: '자동차 교통사고 손해배상 청구 승소', desc: '인적/물적 피해액에 대한 정당한 배상금 산정 및 확보' },
+        { id: '10', type: 'civil', badge: '전부 승소', title: '건물인도 및 연체 차임 청구 전부 승소', desc: '월세 연체 임차인을 상대로 부동산 인도 및 금전 채권 확보' },
+        { id: '11', type: 'civil', badge: '전부 승소', title: '소유권이전등기 청구 방어 승소', desc: '법적 근거 없는 소유권 주장으로부터 의뢰인의 등기 보호' },
+        { id: '12', type: 'civil', badge: '조정 성립', title: '차량 렌트/매입 대금 채무부존재 조정', desc: '복잡한 채권관계를 정리하여 유리한 조건으로 분쟁 종결' },
+        { id: '13', type: 'civil', badge: '인용 결정', title: 'CCTV 삭제 전 긴급 증거보전 성공', desc: '소송 핵심 증거인 영상의 멸실을 막아 법적 우위 점유' },
+        { id: '14', type: 'civil', badge: '전부 승소', title: '임대차보증금 1.7억 원 반환 판결', desc: '계약해지 효력을 부인하는 임대인 상대로 전부 승소' },
+        { id: '15', type: 'civil', badge: '전부 승소', title: '임대차보증금 1.58억 원 반환 확정', desc: '지연손해금과 함께 보증금 전액에 대한 집행권원 확보' },
+        { id: '16', type: 'civil', badge: '전부 기각', title: '불법행위 부당이득금 손배 청구 방어', desc: '명의 대여가 불법 가담이 아님을 입증하여 청구 기각' },
+        { id: '17', type: 'civil', badge: '일부 승소', title: '청구이의 항소심 판결 변경 (강제집행 금액 감액)', desc: '공정증서에 기초한 부당한 강제집행에 대응하여 집행력 대폭 차단 및 결론 변경' },
+        { id: '18', type: 'civil', badge: '인용 결정', title: '사해행위취소 피보전채권으로 가압류 인용', desc: '채무자의 책임재산 은닉에 대비하여 제3채무자에 대한 보증금 반환청구채권 확보' },
+        { id: '19', type: 'criminal', badge: '원심 파기', title: '6억대 업무상배임 항소심 집유 선고', desc: '1심 실형을 파기하고 피해 회사와 합의 유도하여 집유 확보' },
+        { id: '20', type: 'criminal', badge: '불송치', title: '강제추행 및 협박 혐의 경찰 단계 종결', desc: '고소인 주장의 허구성을 밝혀 혐의없음(불송치) 도출' },
+        { id: '21', type: 'criminal', badge: '집행유예', title: '보이스피싱 현금인출책 실형 위기 방어', desc: '미필적 고의의 부존재를 소명하여 법정 구속 면제' },
+        { id: '22', type: 'criminal', badge: '기소유예', title: '준강제추행 초범 성실 반성 기소유예', desc: '피해자와의 합의와 재범 방지 노력을 입증하여 선처' },
+        { id: '23', type: 'criminal', badge: '집행유예', title: '미성년자의제강간 혐의 집행유예 선고', desc: '엄중한 사안에서 양형 사유의 전략적 소명으로 구제' },
+        { id: '24', type: 'criminal', badge: '집행유예', title: '음주운전 치상 및 측정거부 실형 방어', desc: '최악의 정상에서도 피해 회복과 합의를 통해 집유 성공' },
+        { id: '25', type: 'criminal', badge: '기소유예', title: '아동복지시설 종사자 아동학대 기소유예', desc: '취업 제한 위기에서 훈육 목적의 우발성 입증' },
+        { id: '26', type: 'criminal', badge: '기소유예', title: '단순 절도 범행 성실 반성 및 기소유예', desc: '전과를 피하기 위한 신속한 합의 및 선처 호소 성공' },
+        { id: '27', type: 'criminal', badge: '기소유예', title: '공연음란 사건 기소유예 처분 도출', desc: '정신적 병증 소명 및 치료 의지 피력으로 종결' },
+        { id: '28', type: 'criminal', badge: '송치 결정', title: '6,000만원대 사기 사건 고소 대리 성공', desc: '가해자의 변제 의사 없음을 입증하여 기소 의견 송치' },
+        { id: '29', type: 'criminal', badge: '집행유예', title: '음주운전 및 특수재물손괴 병합 집유', desc: '죄질이 불량한 경합 사안에서 실형 위기 극복' },
+        { id: '30', type: 'criminal', badge: '송치 결정', title: '82회 스토킹 및 괴롭힘 혐의 송치', desc: '장기간의 피해 사실 채증을 통한 강력한 법적 대응' },
+        { id: '31', type: 'criminal', badge: '집행유예', title: '통신매체이용음란 및 성착취물 방어', desc: 'N번방 이후 강화된 성범죄 처벌 수위에도 집유 선고' },
+        { id: '32', type: 'criminal', badge: '집행유예', title: '강제추행 혐의 공탁 및 선처 유도 성공', desc: '피해자 측과 원만하지 못한 상황에서 공탁으로 형량 방어' },
+        { id: '33', type: 'criminal', badge: '불송치', title: '청소년보호법 위반 혐의 각하 종결', desc: '경찰 단계에서 무리한 고소 내용을 반박하여 종결' },
+        { id: '34', type: 'family', badge: '조정 성립', title: '유류분반환 청구 9,000만 원 확보', desc: '상속 재산 제외 원고 대리하여 정당한 몫 확보 성공' },
+        { id: '35', type: 'family', badge: '심판 수리', title: '특별한정승인 수리 (사망 1년 후 인지)', desc: '연락 끊긴 부모님의 억대 채무 상속으로부터 자녀 보호' },
+        { id: '36', type: 'family', badge: '전부 승소', title: '이혼 위자료 및 기여도 50% 재산분할', desc: '배우자 폭력성 입증으로 유리한 판결 도출' },
+        { id: '37', type: 'family', badge: '전부 승소', title: '상간녀 손해배상 청구 3,000만 원 승소', desc: '부정행위 증거 채증 통해 혼인 파탄 책임 규명' },
+        { id: '38', type: 'family', badge: '전부 기각', title: '억울한 상간 손해배상 소송 방어 승소', desc: '증거 부족 및 부정행위 미성립을 소명하여 기각' },
+        { id: '39', type: 'family', badge: '선임 결정', title: '성년후견 개시 및 후견인 선임 성공', desc: '정신적 제약 있는 가족 보호를 위한 후견 개시' },
+        { id: '40', type: 'family', badge: '허가 결정', title: '자의 성과 본 변경 허가 (성본 변경)', desc: '아이의 복리와 안정적인 성장을 위한 성 변경 성공' },
+        { id: '41', type: 'family', badge: '심판 수리', title: '6,600만 원대 상속 채무 한정승인 성공', desc: '예상치 못한 부모님 빚으로부터 가족의 자산 보호' },
+        { id: '42', type: 'family', badge: '전부 승소', title: '이혼 소송 재산분할 기여도 70% 인정 및 친권·양육권 확보', desc: '의뢰인의 주된 경제적 기여를 소명하여 유리한 재산분할 비율 인정 및 양육자로 지정' },
+        { id: '43', type: 'family', badge: '조정 성립', title: '이혼 및 재산분할 50% 귀속 등 조정 성립', desc: '원만한 합의를 통해 재산분할 비율 확보 및 사건본인 친권·양육권, 양육비 지급 합의 도출' },
+        { id: '44', type: 'admin', badge: '처분 취소', title: '절차 하자를 이유로 한 학폭 처분 취소', desc: '변호인 진술권 침해 바로잡아 학생의 불이익 제거' },
+        { id: '45', type: 'admin', badge: '전부 기각', title: '간호사 직장 내 괴롭힘 손배 청구 방어', desc: '업무상 지시의 정당성 입증하여 병원 측 보호 성공' },
+        { id: '46', type: 'admin', badge: '조치 없음', title: '학폭위 증거불충분 무죄 결정', desc: '쌍방 신고 사건에서 의뢰 학생의 일방적 무고함 입증' },
+        { id: '47', type: 'admin', badge: '합의 성립', title: '산재 사망사고 유족 대리 2억 합의', desc: '건설현장 매몰 사고 유족 대리하여 회사와의 합의 성공' },
+        { id: '48', type: 'admin', badge: '처분 감경', title: '경찰공무원 징계 소청심사 감경', desc: '우월적 지위 이용 징계에서 20년 복무 정상 참작 성공' },
+        // 49번 업데이트 (산재 사례)
+        { id: '49', type: 'admin', badge: '승인 결정', title: '근로복지공단 산재 요양급여 신청 승인', desc: '업무상 질병 및 사고로 고통받는 근로자를 대리하여 근로복지공단으로부터 요양신청 승인 결정을 이끌어냄' },
+        { id: '50', type: 'admin', badge: '기소유예', title: '학교폭력 관련 폭행 형사 고소 사건 불기소', desc: '피의사실은 인정되나 초범인 소년범의 반성과 피해 경미성을 소명하여 교육조건부 선처 도출' },
+        { id: '51', type: 'admin', badge: '전부 불성립', title: '공사 직원 사이 성희롱 및 2차 가해 신고 방어', desc: '인천교통공사 성희롱 고충심의위원회에서 신고 내용의 허구성을 입증하여 성희롱 및 2차 가해 모두 불성립 결정 도출' }
+    ];
+
+    const titles = { civil: "민사 / 부동산 / 분쟁", criminal: "형사 사건", family: "가사 / 상속 / 심판", admin: "학폭 / 노동 / 행정" };
+    const themeColors = { civil: '#2563eb', criminal: '#334155', family: '#ec4899', admin: '#d97706' };
+
+    let caseSwiper;
+
+    function initSwiper() {
+        if (caseSwiper) caseSwiper.destroy();
+        caseSwiper = new Swiper('.case-swiper', {
+            slidesPerView: 2, spaceBetween: 15,
+            mousewheel: { enabled: true, sensitivity: 1.5, forceToAxis: true, releaseOnEdges: true },
+            freeMode: true, grabCursor: true,
+            navigation: { nextEl: '.next-btn', prevEl: '.prev-btn' },
+            scrollbar: { el: '.swiper-scrollbar', hide: false, draggable: true },
+            pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
+            breakpoints: { 768: { slidesPerView: 3, spaceBetween: 20 }, 1024: { slidesPerView: 4, spaceBetween: 30 } }
+        });
+    }
+
+    function filterCategory(type) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`btn-${type}`).classList.add('active');
+
+        const bar = document.getElementById('category-bar');
+        const color = themeColors[type];
+        bar.style.backgroundColor = color;
+        document.getElementById('category-title').innerText = titles[type];
+
+        const prevBtn = document.getElementById('prev-btn-theme');
+        const nextBtn = document.getElementById('next-btn-theme');
+        [prevBtn, nextBtn].forEach(btn => {
+            btn.onmouseover = () => { btn.style.backgroundColor = color; btn.style.borderColor = 'transparent'; btn.style.color = 'white'; };
+            btn.onmouseout = () => { btn.style.backgroundColor = 'transparent'; btn.style.borderColor = '#e2e8f0'; btn.style.color = '#94a3b8'; };
+        });
+
+        const wrapper = document.getElementById('swiper-wrapper');
+        wrapper.innerHTML = '';
+        const filtered = cases.filter(c => c.type === type);
+        filtered.forEach(item => {
+            const numId = Number(item.id);
+            const html = `
+                <div class="swiper-slide h-auto">
+                    <div class="case-card rounded-2xl overflow-hidden flex flex-col group">
+                        <div class="judgment-img-wrapper">
+                            <img src="${numId}.jpg" alt="판결문" onerror="this.src='https://via.placeholder.com/300x400?text=${numId}.jpg'">
+                            <div class="result-badge theme-${item.type}">${item.badge}</div>
+                        </div>
+                        <div class="p-6 flex-grow text-left">
+                            <span class="text-slate-400 font-bold text-[10px] uppercase mb-1 block tracking-widest">Case #${item.id}</span>
+                            <h4 class="font-bold text-base md:text-xl mb-2 leading-tight break-keep text-slate-900 group-hover:text-blue-700 transition-colors">${item.title}</h4>
+                            <p class="text-slate-500 text-xs font-light leading-relaxed break-keep line-clamp-2">${item.desc}</p>
+                        </div>
+                    </div>
+                </div>`;
+            wrapper.innerHTML += html;
+        });
+        initSwiper();
+    }
+
+    filterCategory('civil');
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
