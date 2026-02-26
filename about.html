@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>청변소개 | 법률사무소 청변</title>
+    <title>청변소개 | 법률사무소 청변 - 인천 서구 부동산, 학폭, 민사, 가사, 형사 김성찬 변호사</title>
     
     <link rel="canonical" href="https://cheongbyeon.co.kr/about.html">
     <meta name="robots" content="index, follow">
     
     <meta name="description" content="법률사무소 청변 김성찬 대표변호사 소개. 의뢰인의 입장에서 가장 명쾌한 해답을 제시합니다.">
-    <meta name="keywords" content="법률사무소 청변, 김성찬 변호사, 루원시티 변호사, 인천 서구 변호사, 청변소개">
 
     <link rel="icon" href="/favicon.jpg" type="image/jpeg">
     <link rel="apple-touch-icon" href="/favicon.jpg">
@@ -23,7 +22,9 @@
         .serif { font-family: 'Noto Serif KR', serif; }
         .bg-navy { background-color: #0A192F; }
         .text-navy { color: #0A192F; }
-        .text-gold { color: #C5A059; }
+        /* 금색을 청색 포인트 컬러로 변경 */
+        .text-accent-blue { color: #1d4ed8; /* Tailwind blue-700 */ } 
+        
         @keyframes phone-ring {
             0% { transform: rotate(0deg) scale(1); }
             10% { transform: rotate(10deg) scale(1.1); }
@@ -34,9 +35,24 @@
             100% { transform: rotate(0deg) scale(1); }
         }
         .animate-ring { animation: phone-ring 2s infinite ease-in-out; }
+        
         .sr-only {
             position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
             overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+        }
+
+        /* 경력 리스트 디자인 */
+        .career-list li { 
+            padding: 1.2rem 0; 
+            border-bottom: 1px solid #f3f4f6; 
+            display: flex; 
+            align-items: baseline;
+        }
+        .career-list li .label { 
+            font-weight: 700; 
+            width: 70px; 
+            flex-shrink: 0;
+            color: #1d4ed8; /* '현' 라벨 청색으로 변경 */
         }
     </style>
 </head>
@@ -57,50 +73,47 @@
     </div>
 </nav>
 
-<section class="pt-40 pb-24 px-6 max-w-4xl mx-auto min-h-screen">
-    <div class="space-y-4 mb-12 text-center md:text-left">
-        <p class="text-blue-700 font-semibold tracking-widest uppercase text-sm italic">Representative Lawyer</p>
-        <h1 class="serif text-4xl md:text-5xl font-bold leading-tight text-navy">
-            대표변호사 <span class="text-blue-900">김성찬</span>
+<section class="pt-40 pb-24 px-6 max-w-4xl mx-auto min-h-[70vh]">
+    <div class="text-center md:text-left mb-16">
+        <p class="text-accent-blue font-bold tracking-widest uppercase text-sm mb-2">Representative Lawyer</p>
+        <h1 class="serif text-4xl md:text-5xl font-bold leading-tight text-navy mb-6">
+            김성찬 대표변호사
         </h1>
-        <p class="text-lg text-gray-600 leading-relaxed font-light mt-4">
-            수많은 실무 경험과 전문성을 바탕으로 의뢰인의 권리를 지키는 든든한 방패가 되겠습니다.<br class="hidden md:block">
+        <p class="text-lg text-gray-600 leading-relaxed font-light">
+            법률사무소 청변은 수많은 실무 경험과 전문성을 바탕으로 의뢰인의 권리를 지키는 든든한 방패가 되겠습니다.<br class="hidden md:block">
             다양한 분야에서 최선의 결과를 이끌어냅니다.
         </p>
-        <div class="h-1 w-20 bg-blue-700 mt-6 mx-auto md:mx-0"></div>
+        <div class="h-1 w-20 bg-blue-700 mt-8 mx-auto md:mx-0"></div>
     </div>
 
-    <div class="bg-white rounded-3xl p-8 md:p-12 border border-gray-100 shadow-xl space-y-12 relative overflow-hidden">
-        <div class="absolute -right-10 -top-10 text-slate-50 opacity-50 z-0">
-            <i class="fas fa-scale-balanced text-[15rem]"></i>
-        </div>
-
-        <div class="relative z-10">
-            <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
-                <i class="fas fa-award text-blue-600 mr-3"></i> 주요 경력
+    <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-t-4 border-blue-700">
+        
+        <div class="mb-12">
+            <h3 class="text-xl font-bold text-navy mb-6 flex items-center">
+                <span class="w-1.5 h-6 bg-blue-700 mr-3 inline-block"></span> 주요 경력
             </h3>
-            <ul class="space-y-4 text-slate-700 text-[1.1rem]">
-                <li class="flex items-start border-b border-gray-50 pb-3"><span class="font-bold text-blue-700 w-12 flex-shrink-0">현</span> <span>법률사무소 청변 대표변호사</span></li>
-                <li class="flex items-start border-b border-gray-50 pb-3"><span class="font-bold text-blue-700 w-12 flex-shrink-0">현</span> <span>인천광역시교육청 학교폭력 제로센터 법률지원단 위촉위원</span></li>
-                <li class="flex items-start border-b border-gray-50 pb-3"><span class="font-bold text-blue-700 w-12 flex-shrink-0">현</span> <span>제12기 인천광역시 시민감사관</span></li>
-                <li class="flex items-start border-b border-gray-50 pb-3"><span class="font-bold text-gray-400 w-12 flex-shrink-0">전</span> <span>법무법인(유한) 대륜</span></li>
-                <li class="flex items-start border-b border-gray-50 pb-3"><span class="font-bold text-gray-400 w-12 flex-shrink-0">전</span> <span>법률사무소 A&P</span></li>
-                <li class="flex items-start border-b border-gray-50 pb-3"><span class="font-bold text-gray-400 w-12 flex-shrink-0">전</span> <span>주식회사 KT</span></li>
-                <li class="flex items-start"><span class="font-bold text-gray-400 w-12 flex-shrink-0">전</span> <span>PT.FCL (인도네시아 자카르타)</span></li>
+            <ul class="career-list text-gray-700 text-lg">
+                <li><span class="label">현</span> <span class="break-keep">법률사무소 청변 대표변호사</span></li>
+                <li><span class="label">현</span> <span class="break-keep">인천광역시교육청 학교폭력 제로센터 법률지원단 위촉위원</span></li>
+                <li><span class="label">현</span> <span class="break-keep">제12기 인천광역시 시민감사관</span></li>
+                <li><span class="label text-gray-400" style="color: #9ca3af;">전</span> <span class="break-keep">법무법인(유한) 대륜</span></li>
+                <li><span class="label text-gray-400" style="color: #9ca3af;">전</span> <span class="break-keep">법률사무소 A&P</span></li>
+                <li><span class="label text-gray-400" style="color: #9ca3af;">전</span> <span class="break-keep">주식회사 KT</span></li>
+                <li><span class="label text-gray-400" style="color: #9ca3af;">전</span> <span class="break-keep">PT.FCL (인도네시아 자카르타)</span></li>
             </ul>
         </div>
 
-        <div class="relative z-10">
-            <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
-                <i class="fas fa-layer-group text-blue-600 mr-3"></i> 주요 업무 분야
+        <div>
+            <h3 class="text-xl font-bold text-navy mb-6 flex items-center">
+                <span class="w-1.5 h-6 bg-blue-700 mr-3 inline-block"></span> 주요 업무 분야
             </h3>
-            <div class="flex flex-wrap gap-3">
-                <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-full text-slate-700 font-bold hover:border-blue-500 hover:text-blue-700 transition shadow-sm">학교폭력</span>
-                <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-full text-slate-700 font-bold hover:border-blue-500 hover:text-blue-700 transition shadow-sm">민사/부동산</span>
-                <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-full text-slate-700 font-bold hover:border-blue-500 hover:text-blue-700 transition shadow-sm">형사 사건</span>
-                <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-full text-slate-700 font-bold hover:border-blue-500 hover:text-blue-700 transition shadow-sm">가사/이혼</span>
-                <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-full text-slate-700 font-bold hover:border-blue-500 hover:text-blue-700 transition shadow-sm">행정 사건</span>
-                <span class="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-full text-slate-700 font-bold hover:border-blue-500 hover:text-blue-700 transition shadow-sm">크리에이터 자문</span>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-5 py-2.5 bg-slate-50 border border-blue-700/40 rounded-full text-sm font-bold text-navy shadow-sm">학교폭력</span>
+                <span class="px-5 py-2.5 bg-slate-50 border border-blue-700/40 rounded-full text-sm font-bold text-navy shadow-sm">민사/부동산</span>
+                <span class="px-5 py-2.5 bg-slate-50 border border-blue-700/40 rounded-full text-sm font-bold text-navy shadow-sm">형사 사건</span>
+                <span class="px-5 py-2.5 bg-slate-50 border border-blue-700/40 rounded-full text-sm font-bold text-navy shadow-sm">가사/이혼</span>
+                <span class="px-5 py-2.5 bg-slate-50 border border-blue-700/40 rounded-full text-sm font-bold text-navy shadow-sm">행정 사건</span>
+                <span class="px-5 py-2.5 bg-slate-50 border border-blue-700/40 rounded-full text-sm font-bold text-navy shadow-sm">크리에이터 자문</span>
             </div>
         </div>
     </div>
