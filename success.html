@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>성공사례 | 법률사무소 청변 - 인천 변호사 김성찬</title>
-    <meta name="description" content="법률사무소 청변의 실제 승소 및 성공 사례를 확인하세요. 형사, 민사, 가사, 행정 등 김성찬 대표변호사가 정성으로 일구어낸 결과입니다.">
-    <meta name="keywords" content="법률사무소 청변, 성공사례, 인천변호사, 승소사례, 김성찬변호사, 형사전문, 민사소송, 청라변호사, 루원시티변호사">
+    <title>승소사례 | 인천 서구 청라·루원시티 변호사 - 학폭·이혼·형사·부동산 - 법률사무소 청변</title>
+    
+    <meta name="description" content="법률사무소 청변 김성찬 대표변호사의 실제 승소 사례. 학교폭력, 형사 사건, 이혼/가사, 부동산, 민사 소송 등 수많은 불기소, 무죄, 승소 판결문으로 실력을 증명합니다.">
+    <meta name="keywords" content="법률사무소 청변, 성공사례, 승소사례, 불기소, 집행유예, 무죄, 인천변호사, 청라변호사, 루원시티변호사, 인천 학폭 변호사, 인천 형사 전문, 인천 이혼 변호사, 인천 부동산 변호사">
     <link rel="canonical" href="https://cheongbyeon.co.kr/success.html">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="성공사례 | 법률사무소 청변">
-    <meta property="og:description" content="결과로 증명하는 청변의 실력. 실제 승소 사례를 공개합니다.">
+    <meta property="og:title" content="승소사례 | 인천 서구 청라·루원시티 법률사무소 청변">
+    <meta property="og:description" content="결과로 증명하는 청변의 실력. 학폭, 이혼, 형사, 부동산 실제 승소 판결문을 확인하세요.">
     <meta property="og:url" content="https://cheongbyeon.co.kr/success.html">
     <meta property="og:image" content="https://cheongbyeon.co.kr/logo.png">
 
@@ -73,6 +74,12 @@
             display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.95);
             z-index: 9999; align-items: center; justify-content: center; padding: 20px;
         }
+
+        /* [SEO 추가] 화면에는 안 보이지만 검색 엔진은 읽는 클래스 (메인과 동일하게 추가) */
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -97,9 +104,10 @@
         <div class="inline-block py-1 px-4 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-400 text-xs md:text-sm font-bold mb-6 tracking-widest uppercase">
             Success Records
         </div>
-        <h1 class="text-4xl md:text-6xl font-black text-white mb-10 tracking-tight break-keep leading-tight">
+        <h1 class="sr-only">학교폭력, 형사, 이혼, 부동산, 민사 소송 승소사례 모음 - 인천 서구 청라 루원시티 법률사무소 청변</h1>
+        <h2 class="text-4xl md:text-6xl font-black text-white mb-10 tracking-tight break-keep leading-tight">
             결과로 증명하는 <span class="text-blue-400">청변의 실력</span>
-        </h1>
+        </h2>
         <div class="text-gray-300 text-lg md:text-xl font-light max-w-3xl mx-auto break-keep leading-relaxed space-y-2 mb-10">
             <p>단순한 기록이 아닌 의뢰인의 삶을 바꾼 <span class="text-white font-medium">정성의 결과</span></p>
             <p>청변의 집요함과 진심이 담긴 실제 승소 사례들을 소개합니다.</p>
@@ -128,7 +136,7 @@
         <div class="flex flex-wrap justify-between items-center mb-12 gap-y-4">
             <div class="flex items-center gap-4">
                 <span id="category-bar" class="w-2 h-10 rounded-full bg-blue-600 transition-none"></span>
-                <h3 id="category-title" class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">민사 / 부동산 / 분쟁</h3>
+                <h2 id="category-title" class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">민사 / 부동산 / 분쟁</h2>
             </div>
             <div class="hidden md:flex gap-3">
                 <button id="prev-btn-theme" class="prev-btn w-12 h-12 border border-slate-200 rounded-full flex items-center justify-center text-slate-400 hover:text-white transition-all shadow-sm"><i class="fas fa-arrow-left text-sm"></i></button>
@@ -289,17 +297,17 @@
             const numId = Number(item.id);
             const html = `
                 <div class="swiper-slide h-auto">
-                    <div class="case-card rounded-2xl overflow-hidden flex flex-col group">
+                    <article class="case-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="judgment-img-wrapper">
-                            <img src="${numId}.jpg" alt="${item.title} 판결문" onerror="this.src='https://via.placeholder.com/300x400?text=${numId}.jpg'">
+                            <img src="${numId}.jpg" alt="${item.badge} 판결문: ${item.title}" onerror="this.src='https://via.placeholder.com/300x400?text=${numId}.jpg'">
                             <div class="result-badge theme-${item.type}">${item.badge}</div>
                         </div>
                         <div class="p-6 flex-grow text-left">
                             <span class="text-slate-400 font-bold text-[10px] uppercase mb-1 block tracking-widest">Case #${item.id}</span>
-                            <h4 class="font-bold text-base md:text-xl mb-2 leading-tight break-keep text-slate-900 group-hover:text-blue-700 transition-colors">${item.title}</h4>
+                            <h3 class="font-bold text-base md:text-xl mb-2 leading-tight break-keep text-slate-900 group-hover:text-blue-700 transition-colors">${item.title}</h3>
                             <p class="text-slate-500 text-xs font-light leading-relaxed break-keep line-clamp-2">${item.desc}</p>
                         </div>
-                    </div>
+                    </article>
                 </div>`;
             wrapper.innerHTML += html;
         });
