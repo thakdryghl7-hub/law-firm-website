@@ -6,8 +6,8 @@
     
     <title>승소사례 | 인천 서구 청라·루원시티 변호사 - 학폭·이혼·형사·부동산 - 법률사무소 청변</title>
     
-    <meta name="description" content="법률사무소 청변 김성찬 대표변호사의 실제 승소 사례. 학교폭력, 형사 사건, 이혼/가사, 부동산, 민사 소송 등 수많은 불기소, 무죄, 승소 판결문으로 실력을 증명합니다.">
-    <meta name="keywords" content="법률사무소 청변, 성공사례, 승소사례, 불기소, 집행유예, 무죄, 인천변호사, 청라변호사, 루원시티변호사, 인천 학폭 변호사, 인천 형사 전문, 인천 이혼 변호사, 인천 부동산 변호사">
+    <meta name="description" content="법률사무소 청변 김성찬 대표변호사·김수민 변호사의 실제 승소 사례. 학교폭력, 형사 사건, 이혼/가사, 부동산, 민사 소송 등 수많은 불기소, 무죄, 승소 판결문으로 실력을 증명합니다.">
+    <meta name="keywords" content="법률사무소 청변, 성공사례, 승소사례, 불기소, 집행유예, 무죄, 인천변호사, 청라변호사, 루원시티변호사, 김성찬 변호사, 김수민 변호사, 인천 학폭 변호사, 인천 형사 전문, 인천 이혼 변호사, 인천 부동산 변호사">
     <link rel="canonical" href="https://cheongbyeon.co.kr/success.html">
 
     <meta property="og:type" content="website">
@@ -34,6 +34,7 @@
         .tab-civil.active { color: #2563eb; border-bottom-color: #2563eb; }
         .tab-criminal.active { color: #334155; border-bottom-color: #334155; }
         .tab-family.active { color: #ec4899; border-bottom-color: #ec4899; }
+        .tab-school.active { color: #059669; border-bottom-color: #059669; }
         .tab-admin.active { color: #d97706; border-bottom-color: #d97706; }
 
         .case-card { 
@@ -58,7 +59,19 @@
         .theme-civil { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); }
         .theme-criminal { background: linear-gradient(135deg, #1e293b 0%, #475569 100%); }
         .theme-family { background: linear-gradient(135deg, #be185d 0%, #db2777 100%); }
+        .theme-school { background: linear-gradient(135deg, #047857 0%, #059669 100%); }
         .theme-admin { background: linear-gradient(135deg, #b45309 0%, #d97706 100%); }
+
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; border: 1px solid #e5e7eb; border-radius: 0.75rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1); padding: 0.5rem 0; min-width: 180px; margin-top: 0.5rem; opacity: 0; visibility: hidden; transition: all 0.2s ease; z-index: 1000; }
+        .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; }
+        .nav-dropdown-menu a { display: block; padding: 0.6rem 1.25rem; font-size: 0.9rem; color: #334155; transition: all 0.15s ease; white-space: nowrap; }
+        .nav-dropdown-menu a:hover { background: #eff6ff; color: #1e3a8a; }
+        @media (max-width: 767px) {
+            .nav-dropdown-menu { position: static; transform: none; box-shadow: none; border: none; background: transparent; padding: 0; min-width: auto; margin-top: 0; display: none; }
+            .nav-dropdown.open .nav-dropdown-menu { display: block; }
+            .nav-dropdown-menu a { padding: 0.4rem 0; text-align: center; font-size: 0.8rem; }
+        }
 
         .result-badge {
             position: absolute; top: 0; right: 0; color: white; padding: 0.45rem 0.85rem;
@@ -92,7 +105,18 @@
         <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 md:gap-8 font-bold text-slate-700 text-sm md:text-base">
             <a href="index.html" class="py-1 md:py-2 hover:text-blue-900 transition">홈</a>
             <a href="about.html" class="py-1 md:py-2 hover:text-blue-900 transition">청변소개</a>
-            <a href="success.html" class="py-1 md:py-2 text-blue-900 transition underline underline-offset-4 md:underline-offset-8">성공사례</a>
+            <div class="nav-dropdown">
+                <a href="success.html" class="py-1 md:py-2 text-blue-900 transition underline underline-offset-4 md:underline-offset-8 inline-flex items-center gap-1 cursor-pointer">
+                    성공사례 <i class="fas fa-chevron-down text-[10px]"></i>
+                </a>
+                <div class="nav-dropdown-menu">
+                    <a href="success-civil.html">민사 / 부동산</a>
+                    <a href="success-criminal.html">형사사건</a>
+                    <a href="success-family.html">가사 / 상속</a>
+                    <a href="success-school.html">학폭사건</a>
+                    <a href="success-admin.html">노동 / 행정</a>
+                </div>
+            </div>
             <a href="https://blog.naver.com/cheong_byeon" target="_blank" class="py-1 md:py-2 hover:text-blue-900 transition">청변 블로그</a>
             <a href="contact.html" class="py-1.5 px-3 md:py-2 md:px-4 bg-blue-900 text-white rounded-lg hover:bg-navy transition shadow-sm text-xs md:text-base font-bold">상담신청</a>
         </div>
@@ -123,10 +147,11 @@
 <nav class="sticky top-[72px] md:top-[81px] z-[100] bg-white border-b border-gray-200 shadow-sm">
     <div class="container mx-auto px-4 text-center">
         <div class="flex justify-center md:gap-12 overflow-x-auto whitespace-nowrap scrollbar-hide">
-            <button onclick="filterCategory('civil')" class="tab-btn tab-civil px-6 py-5 text-sm md:text-base font-bold active" id="btn-civil">민사/부동산</button>
-            <button onclick="filterCategory('criminal')" class="tab-btn tab-criminal px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-criminal">형사사건</button>
-            <button onclick="filterCategory('family')" class="tab-btn tab-family px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-family">가사/상속</button>
-            <button onclick="filterCategory('admin')" class="tab-btn tab-admin px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-admin">학폭/노동/행정</button>
+            <button onclick="filterCategory('civil')" class="tab-btn tab-civil px-4 md:px-6 py-5 text-sm md:text-base font-bold active" id="btn-civil">민사/부동산</button>
+            <button onclick="filterCategory('criminal')" class="tab-btn tab-criminal px-4 md:px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-criminal">형사사건</button>
+            <button onclick="filterCategory('family')" class="tab-btn tab-family px-4 md:px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-family">가사/상속</button>
+            <button onclick="filterCategory('school')" class="tab-btn tab-school px-4 md:px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-school">학폭사건</button>
+            <button onclick="filterCategory('admin')" class="tab-btn tab-admin px-4 md:px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-admin">노동/행정</button>
         </div>
     </div>
 </nav>
@@ -246,18 +271,25 @@
         { id: '41', type: 'family', badge: '심판 수리', title: '6,600만 원대 상속 채무 한정승인 성공', desc: '예상치 못한 부모님 빚으로부터 가족의 자산 보호' },
         { id: '42', type: 'family', badge: '전부 승소', title: '이혼 소송 재산분할 기여도 70% 인정 및 친권·양육권 확보', desc: '의뢰인의 주된 경제적 기여를 소명하여 유리한 재산분할 비율 인정 및 양육자로 지정' },
         { id: '43', type: 'family', badge: '조정 성립', title: '이혼 및 재산분할 50% 귀속 등 조정 성립', desc: '원만한 합의를 통해 재산분할 비율 확보 및 사건본인 친권·양육권, 양육비 지급 합의 도출' },
-        { id: '44', type: 'admin', badge: '처분 취소', title: '절차 하자를 이유로 한 학폭 처분 취소', desc: '변호인 진술권 침해 바로잡아 학생의 불이익 제거' },
+        { id: '44', type: 'school', badge: '처분 취소', title: '절차 하자를 이유로 한 학폭 처분 취소', desc: '변호인 진술권 침해 바로잡아 학생의 불이익 제거' },
         { id: '45', type: 'admin', badge: '전부 기각', title: '간호사 직장 내 괴롭힘 손배 청구 방어', desc: '업무상 지시의 정당성 입증하여 병원 측 보호 성공' },
-        { id: '46', type: 'admin', badge: '조치 없음', title: '학폭위 증거불충분 무죄 결정', desc: '쌍방 신고 사건에서 의뢰 학생의 일방적 무고함 입증' },
+        { id: '46', type: 'school', badge: '조치 없음', title: '학폭위 증거불충분 무죄 결정', desc: '쌍방 신고 사건에서 의뢰 학생의 일방적 무고함 입증' },
         { id: '47', type: 'admin', badge: '합의 성립', title: '산재 사망사고 유족 대리 2억 합의', desc: '건설현장 매몰 사고 유족 대리하여 회사와의 합의 성공' },
         { id: '48', type: 'admin', badge: '처분 감경', title: '경찰공무원 징계 소청심사 감경', desc: '우월적 지위 이용 징계에서 20년 복무 정상 참작 성공' },
         { id: '49', type: 'admin', badge: '승인 결정', title: '근로복지공단 산재 요양급여 신청 승인', desc: '업무상 질병 및 사고로 고통받는 근로자를 대리하여 근로복지공단으로부터 요양신청 승인 결정을 이끌어냄' },
-        { id: '50', type: 'admin', badge: '기소유예', title: '학교폭력 관련 폭행 형사 고소 사건 불기소', desc: '피의사실은 인정되나 초범인 소년범의 반성과 피해 경미성을 소명하여 교육조건부 선처 도출' },
-        { id: '51', type: 'admin', badge: '전부 불성립', title: '공사 직원 사이 성희롱 및 2차 가해 신고 방어', desc: '인천교통공사 성희롱 고충심의위원회에서 신고 내용의 허구성을 입증하여 성희롱 및 2차 가해 모두 불성립 결정 도출' }
+        { id: '50', type: 'school', badge: '기소유예', title: '학교폭력 관련 폭행 형사 고소 사건 불기소', desc: '피의사실은 인정되나 초범인 소년범의 반성과 피해 경미성을 소명하여 교육조건부 선처 도출' },
+        { id: '51', type: 'admin', badge: '전부 불성립', title: '공사 직원 사이 성희롱 및 2차 가해 신고 방어', desc: '인천교통공사 성희롱 고충심의위원회에서 신고 내용의 허구성을 입증하여 성희롱 및 2차 가해 모두 불성립 결정 도출' },
+        { id: '52', type: 'school', badge: '처분 도출', title: '사이버 따돌림·DM 소액 갈취 가해학생 4명 처분 도출', desc: '단체방 폭언과 DM 갈취 사안에서 사전조사 단계부터 밀착 조력하여 가해학생 4명 전원에 사회봉사·학교봉사 처분 도출' },
+        { id: '53', type: 'school', badge: '처분 상향', title: '1호(서면사과) 행정소송 취소 후 4호(사회봉사) 재심의 도출', desc: '솜방방이 1호 처분에 불복하여 행정소송 승소 후 재심의에서 가해학생 사회봉사 중징계 확정 — 행정소송·재심의 일괄 수행' },
+        { id: '54', type: 'school', badge: '처분 취소', title: '기숙학생 집단 괴롭힘 1호 처분 행정소송 취소', desc: '인용률 17.5%의 학폭 행정소송에서 인천지방법원이 가해학생 서면사과 처분을 취소하는 승소 판결' },
+        { id: '55', type: 'school', badge: '조치 없음', title: '초등 4학년 억울한 학폭 누명 모든 혐의 "학교폭력 아님"', desc: '후드티 당김·청소 강요 등 부풀려진 신고에 대해 청소반장 정당 활동과 친구 간 일상 행위임을 입증하여 무혐의 결정' },
+        { id: '56', type: 'school', badge: '조치 없음', title: '스토킹 가해자 맞학폭 신고 방어 — 의뢰인 무혐의·가해자 처분', desc: '보복성 맞신고에 대해 교사 상담의 정당성과 증거수집 권한을 입증, 가해자에 2호·3호 처분 도출하고 의뢰인은 조치 없음 결정' },
+        { id: '57', type: 'family', badge: '전부 승소', title: '상간남 손해배상 청구 4,000만 원 승소', desc: '부정행위 입증으로 혼인 파탄 책임 규명 및 위자료 4,000만 원 확보' },
+        { id: '58', type: 'criminal', badge: '불기소', title: '억울한 강제추행 혐의 불기소 처분', desc: '고소인 주장의 허구성을 밝혀 검찰 단계에서 혐의없음 불기소 도출' }
     ];
 
-    const titles = { civil: "민사 / 부동산 / 분쟁", criminal: "형사 사건", family: "가사 / 상속 / 심판", admin: "학폭 / 노동 / 행정" };
-    const themeColors = { civil: '#2563eb', criminal: '#334155', family: '#ec4899', admin: '#d97706' };
+    const titles = { civil: "민사 / 부동산 / 분쟁", criminal: "형사 사건", family: "가사 / 상속 / 심판", school: "학교폭력 사건", admin: "노동 / 행정" };
+    const themeColors = { civil: '#2563eb', criminal: '#334155', family: '#ec4899', school: '#059669', admin: '#d97706' };
 
     let caseSwiper;
 
@@ -315,6 +347,15 @@
     }
 
     filterCategory('civil');
+
+    document.querySelectorAll('.nav-dropdown > a').forEach(trigger => {
+        trigger.addEventListener('click', e => {
+            if (window.innerWidth < 768) { e.preventDefault(); trigger.parentElement.classList.toggle('open'); }
+        });
+    });
+    document.addEventListener('click', e => {
+        document.querySelectorAll('.nav-dropdown.open').forEach(d => { if (!d.contains(e.target)) d.classList.remove('open'); });
+    });
 </script>
 
 </body>
