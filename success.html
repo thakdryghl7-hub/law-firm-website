@@ -110,10 +110,10 @@
                     성공사례 <i class="fas fa-chevron-down text-[10px]"></i>
                 </a>
                 <div class="nav-dropdown-menu">
+                    <a href="success-school.html">학교폭력</a>
                     <a href="success-civil.html">민사 / 부동산</a>
                     <a href="success-criminal.html">형사사건</a>
                     <a href="success-family.html">가사 / 상속</a>
-                    <a href="success-school.html">학폭사건</a>
                     <a href="success-admin.html">노동 / 행정</a>
                 </div>
             </div>
@@ -147,10 +147,10 @@
 <nav class="sticky top-[72px] md:top-[81px] z-[100] bg-white border-b border-gray-200 shadow-sm">
     <div class="container mx-auto px-4 text-center">
         <div class="flex justify-center md:gap-12 overflow-x-auto whitespace-nowrap scrollbar-hide">
-            <button onclick="filterCategory('civil')" class="tab-btn tab-civil px-4 md:px-6 py-5 text-sm md:text-base font-bold active" id="btn-civil">민사/부동산</button>
+            <button onclick="filterCategory('school')" class="tab-btn tab-school px-4 md:px-6 py-5 text-sm md:text-base font-bold active" id="btn-school">학교폭력</button>
+            <button onclick="filterCategory('civil')" class="tab-btn tab-civil px-4 md:px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-civil">민사/부동산</button>
             <button onclick="filterCategory('criminal')" class="tab-btn tab-criminal px-4 md:px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-criminal">형사사건</button>
             <button onclick="filterCategory('family')" class="tab-btn tab-family px-4 md:px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-family">가사/상속</button>
-            <button onclick="filterCategory('school')" class="tab-btn tab-school px-4 md:px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-school">학폭사건</button>
             <button onclick="filterCategory('admin')" class="tab-btn tab-admin px-4 md:px-6 py-5 text-sm md:text-base font-medium text-gray-500" id="btn-admin">노동/행정</button>
         </div>
     </div>
@@ -346,7 +346,7 @@
         initSwiper();
     }
 
-    filterCategory('civil');
+    filterCategory('school');
 
     document.querySelectorAll('.nav-dropdown > a').forEach(trigger => {
         trigger.addEventListener('click', e => {
