@@ -9,12 +9,12 @@
     <link rel="canonical" href="https://cheongbyeon.co.kr/">
     <meta name="robots" content="index, follow">
     
-    <meta name="description" content="인천 서구, 청라, 루원시티 밀착 법률 상담. 법률사무소 청변 김성찬 대표변호사가 직접 수행합니다. 학폭, 이혼, 형사, 부동산, 민사 소송까지 의뢰인을 위한 확실한 솔루션.">
-    <meta name="keywords" content="인천 서구 변호사, 청라 변호사, 루원시티 변호사, 법률사무소 청변, 김성찬 변호사, 인천 학폭 변호사, 인천 이혼 변호사, 인천 형사 전문, 인천 부동산 변호사, 인천 민사 변호사">
+    <meta name="description" content="인천 서구, 청라, 루원시티 밀착 법률 상담. 법률사무소 청변 김성찬·김수민 대형로펌 출신 2인 변호사가 직접 수행합니다. 학폭, 이혼, 형사, 부동산, 민사 소송까지 의뢰인을 위한 확실한 솔루션.">
+    <meta name="keywords" content="인천 서구 변호사, 청라 변호사, 루원시티 변호사, 법률사무소 청변, 김성찬 변호사, 김수민 변호사, 인천 학폭 변호사, 인천 이혼 변호사, 인천 형사 전문, 인천 부동산 변호사, 인천 민사 변호사">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="인천 서구 청라·루원시티 변호사 | 학폭·이혼·형사·부동산·민사">
-    <meta property="og:description" content="학폭, 이혼, 형사, 부동산, 민사 소송의 든든한 파트너. 인천 서구 주민의 권익을 최우선으로 하는 김성찬 대표변호사가 직접 수행합니다.">
+    <meta property="og:description" content="학폭, 이혼, 형사, 부동산, 민사 소송의 든든한 파트너. 김성찬 대표변호사·김수민 변호사가 직접 상담하고 직접 수행합니다.">
     <meta property="og:url" content="https://cheongbyeon.co.kr">
     <meta property="og:image" content="https://cheongbyeon.co.kr/og-image.png">
 
@@ -30,6 +30,18 @@
         .serif { font-family: 'Noto Serif KR', serif; }
         .bg-navy { background-color: #0A192F; }
         .text-gold { color: #C5A059; }
+
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; border: 1px solid #e5e7eb; border-radius: 0.75rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1); padding: 0.5rem 0; min-width: 180px; margin-top: 0.5rem; opacity: 0; visibility: hidden; transition: all 0.2s ease; z-index: 1000; }
+        .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; }
+        .nav-dropdown-menu a { display: block; padding: 0.6rem 1.25rem; font-size: 0.9rem; color: #334155; transition: all 0.15s ease; white-space: nowrap; }
+        .nav-dropdown-menu a:hover { background: #eff6ff; color: #1e3a8a; }
+        @media (max-width: 767px) {
+            .nav-dropdown-menu { position: static; transform: none; box-shadow: none; border: none; background: transparent; padding: 0; min-width: auto; margin-top: 0; display: none; }
+            .nav-dropdown.open .nav-dropdown-menu { display: block; }
+            .nav-dropdown-menu a { padding: 0.4rem 0; text-align: center; font-size: 0.8rem; }
+        }
+
         @keyframes phone-ring {
             0% { transform: rotate(0deg) scale(1); }
             10% { transform: rotate(10deg) scale(1.1); }
@@ -64,7 +76,18 @@
         <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 md:gap-8 font-bold text-slate-700 text-sm md:text-base">
             <a href="index.html" class="py-1 md:py-2 text-blue-900 transition underline underline-offset-4 md:underline-offset-8">홈</a>
             <a href="about.html" class="py-1 md:py-2 hover:text-blue-900 transition">청변소개</a>
-            <a href="success.html" class="py-1 md:py-2 hover:text-blue-900 transition">성공사례</a>
+            <div class="nav-dropdown">
+                <a href="success.html" class="py-1 md:py-2 hover:text-blue-900 transition inline-flex items-center gap-1 cursor-pointer">
+                    성공사례 <i class="fas fa-chevron-down text-[10px]"></i>
+                </a>
+                <div class="nav-dropdown-menu">
+                    <a href="success-civil.html">민사 / 부동산</a>
+                    <a href="success-criminal.html">형사사건</a>
+                    <a href="success-family.html">가사 / 상속</a>
+                    <a href="success-school.html">학폭사건</a>
+                    <a href="success-admin.html">노동 / 행정</a>
+                </div>
+            </div>
             <a href="https://blog.naver.com/cheong_byeon" target="_blank" class="py-1 md:py-2 hover:text-blue-900 transition">청변 블로그</a>
             <a href="contact.html" class="py-1.5 px-3 md:py-2 md:px-4 bg-blue-900 text-white rounded-lg hover:bg-navy transition shadow-sm text-xs md:text-base font-bold">상담신청</a>
         </div>
@@ -123,7 +146,7 @@
                 <h3 class="text-xl font-bold mb-6 text-slate-900 break-keep">1. 직접 상담 직접 수행 원칙</h3>
                 <ul class="space-y-4 text-slate-600">
                     <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0"></i><span class="break-keep">사무장이 상담하지 않습니다.</span></li>
-                    <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0"></i><span class="break-keep"><strong class="text-slate-900">상담 변호사가 직접 수행</strong>합니다.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0"></i><span class="break-keep"><strong class="text-slate-900">대형로펌 출신 2인 변호사</strong>가 직접 상담하고 직접 수행합니다.</span></li>
                 </ul>
             </a>
 
@@ -144,7 +167,7 @@
                 </div>
                 <h3 class="text-xl font-bold mb-6 text-slate-900 break-keep">3. 빠른 소통</h3>
                 <ul class="space-y-4 text-slate-600">
-                    <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0"></i><span class="break-keep">언제든 직통 전화로 빠르게 소통합니다.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0"></i><span class="break-keep">수임 즉시 <strong class="text-slate-900">변호사와 함께하는 사건방</strong>이 개설됩니다.</span></li>
                     <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0"></i><span class="break-keep">모든 사건 진행 상황은 <strong class="text-slate-900">즉시 공유</strong>합니다.</span></li>
                 </ul>
             </a>
@@ -265,6 +288,17 @@
         </span>
     </a>
 </div>
+
+<script>
+    document.querySelectorAll('.nav-dropdown > a').forEach(trigger => {
+        trigger.addEventListener('click', e => {
+            if (window.innerWidth < 768) { e.preventDefault(); trigger.parentElement.classList.toggle('open'); }
+        });
+    });
+    document.addEventListener('click', e => {
+        document.querySelectorAll('.nav-dropdown.open').forEach(d => { if (!d.contains(e.target)) d.classList.remove('open'); });
+    });
+</script>
 
 </body>
 </html>

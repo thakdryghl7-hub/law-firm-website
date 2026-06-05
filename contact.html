@@ -11,6 +11,17 @@
         body { font-family: 'Pretendard', sans-serif; word-break: keep-all; }
         .serif { font-family: 'Noto Serif KR', serif; }
         .bg-navy { background-color: #0A192F; }
+
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; border: 1px solid #e5e7eb; border-radius: 0.75rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1); padding: 0.5rem 0; min-width: 180px; margin-top: 0.5rem; opacity: 0; visibility: hidden; transition: all 0.2s ease; z-index: 1000; }
+        .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; }
+        .nav-dropdown-menu a { display: block; padding: 0.6rem 1.25rem; font-size: 0.9rem; color: #334155; transition: all 0.15s ease; white-space: nowrap; }
+        .nav-dropdown-menu a:hover { background: #eff6ff; color: #1e3a8a; }
+        @media (max-width: 767px) {
+            .nav-dropdown-menu { position: static; transform: none; box-shadow: none; border: none; background: transparent; padding: 0; min-width: auto; margin-top: 0; display: none; }
+            .nav-dropdown.open .nav-dropdown-menu { display: block; }
+            .nav-dropdown-menu a { padding: 0.4rem 0; text-align: center; font-size: 0.8rem; }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -23,7 +34,18 @@
             <div class="flex flex-row items-center gap-6 md:gap-8 font-bold text-slate-700">
                 <a href="index.html" class="py-2 hover:text-blue-900 transition">홈</a>
                 <a href="about.html" class="py-2 hover:text-blue-900 transition">청변소개</a>
-                <a href="success.html" class="py-2 hover:text-blue-900 transition">성공사례</a>
+                <div class="nav-dropdown">
+                    <a href="success.html" class="py-2 hover:text-blue-900 transition inline-flex items-center gap-1 cursor-pointer">
+                        성공사례 <i class="fas fa-chevron-down text-[10px]"></i>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="success-civil.html">민사 / 부동산</a>
+                        <a href="success-criminal.html">형사사건</a>
+                        <a href="success-family.html">가사 / 상속</a>
+                        <a href="success-school.html">학폭사건</a>
+                        <a href="success-admin.html">노동 / 행정</a>
+                    </div>
+                </div>
                 <a href="https://blog.naver.com/cheong_byeon" class="py-2 hover:text-blue-900 transition">청변 블로그</a>
                 <a href="contact.html" class="py-2 px-4 bg-blue-900 text-white rounded-lg transition shadow-sm">상담신청</a>
             </div>
@@ -85,6 +107,17 @@
             <p class="text-[13px]">© 2025 Law Firm CheongByeon. All rights reserved.</p>
         </div>
     </footer>
+
+<script>
+    document.querySelectorAll('.nav-dropdown > a').forEach(trigger => {
+        trigger.addEventListener('click', e => {
+            if (window.innerWidth < 768) { e.preventDefault(); trigger.parentElement.classList.toggle('open'); }
+        });
+    });
+    document.addEventListener('click', e => {
+        document.querySelectorAll('.nav-dropdown.open').forEach(d => { if (!d.contains(e.target)) d.classList.remove('open'); });
+    });
+</script>
 
 </body>
 </html>
