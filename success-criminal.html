@@ -96,6 +96,23 @@
       ]
     }
     </script>
+<!-- 네이버 검색광고 전환추적 공통 스크립트 -->
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if (window.wcs) {
+    if (!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "s_40bc64650b12";
+    wcs.inflow("cheongbyeon.co.kr");
+    wcs_do();
+}
+function cb_naverLead(label) {
+    try {
+        if (window.wcs && wcs.trans) {
+            wcs.trans({ type: "lead", value: "0", label: label || "" });
+        }
+    } catch (e) {}
+}
+</script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -385,7 +402,7 @@
         </div>
 
         <div class="mt-12 text-center">
-            <a href="tel:010-9911-2793" class="inline-flex items-center text-lg font-bold text-white bg-slate-800 hover:bg-slate-900 transition-colors group px-6 py-3 rounded-full">
+            <a href="tel:010-9911-2793" onclick="cb_naverLead('phone_criminal_cta')" class="inline-flex items-center text-lg font-bold text-white bg-slate-800 hover:bg-slate-900 transition-colors group px-6 py-3 rounded-full">
                 <i class="fas fa-phone-alt mr-2"></i> 24시간 형사 긴급상담 010-9911-2793
             </a>
         </div>
