@@ -65,6 +65,24 @@
             border-width: 0;
         }
     </style>
+<!-- 네이버 검색광고 전환추적 공통 스크립트 -->
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add={};
+wcs_add["wa"] = "s_40bc64650b12";
+if(!_nasa) var _nasa={};
+if(window.wcs){
+wcs.inflow();
+wcs_do();
+}
+function cb_naverLead(label) {
+    try {
+        if (window.wcs && wcs.trans) {
+            wcs.trans({ type: "lead", value: "0", label: label || "" });
+        }
+    } catch (e) {}
+}
+</script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
