@@ -61,6 +61,8 @@
         }
 
         .result-badge { position: absolute; top: 0; right: 0; color: white; padding: 0.45rem 0.85rem; border-bottom-left-radius: 1rem; font-weight: 900; font-size: 0.8rem; z-index: 10; }
+        .new-badge { position: absolute; top: 0; left: 0; background: #ef4444; color: white; padding: 0.45rem 0.85rem; border-bottom-right-radius: 1rem; font-weight: 900; font-size: 0.8rem; z-index: 10; letter-spacing: 0.08em; animation: new-pulse 1.6s infinite ease-in-out; }
+        @keyframes new-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
         .swiper-container { padding: 10px 5px 60px 5px; cursor: grab; }
         .swiper-container:active { cursor: grabbing; }
         .swiper-scrollbar { background: rgba(0,0,0,0.05); height: 4px !important; }
@@ -536,6 +538,7 @@ function cb_naverLead(label) {
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     const cases = [
+        { id: '60', badge: '3호 처분', isNew: true, link: 'https://blog.naver.com/cheong_byeon/224384763336', title: "초등학교 피해학생 측 대리 — 가해학생 3호(학교봉사) 처분", desc: "초등 신체폭력 사안에서 피해학생 측 대리 — 가해학생에 2호(접촉·협박·보복 금지)·3호(학교봉사)·특별교육 처분 도출, 상대방의 맞신고는 전부 '학교폭력 아님' 결정" },
         { id: '59', badge: '8호 강제전학', title: "피해학생 측 대리 — 가해학생 제8호 강제전학 처분 인용", desc: "장기간 다층적 학교폭력 사안에서 형사 고소 병행으로 객관적 증거를 확보하고 DM·녹취록·목격 학생 진술 등 다층 증거 제출 — 학폭위 가해학생 제8호 강제전학 처분 인용" },
         { id: '52', badge: '처분 도출', title: "사이버 따돌림·DM 소액 갈취 가해학생 4명 4호 처분 도출", desc: "단체방 폭언과 DM 갈취 사안에서 사전조사 단계부터 밀착 조력하여 가해학생 4명 전원에 사회봉사·학교봉사 처분 도출" },
         { id: '53', badge: '처분 상향', title: "학교폭력 재심의를 통한 처분 상향 (1호 → 4호)", desc: "솜방방이 1호 처분에 불복하여 행정소송 승소 후 재심의에서 가해학생 사회봉사 중징계 확정 — 행정소송·재심의 일괄 수행" },
@@ -550,19 +553,22 @@ function cb_naverLead(label) {
     const wrapper = document.getElementById('swiper-wrapper');
     cases.forEach(item => {
         const numId = Number(item.id);
-        wrapper.innerHTML += `
-            <div class="swiper-slide h-auto">
+        const card = `
                 <article class="case-card rounded-2xl overflow-hidden flex flex-col group">
                     <div class="judgment-img-wrapper">
                         <img src="${numId}.jpg" alt="학폭 ${item.badge} 판결문: ${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x400?text=${numId}.jpg'">
                         <div class="result-badge theme-school">${item.badge}</div>
+                        ${item.isNew ? '<div class="new-badge">NEW</div>' : ''}
                     </div>
                     <div class="p-6 flex-grow text-left">
                         <span class="text-slate-400 font-bold text-[10px] uppercase mb-1 block tracking-widest">Case #${item.id}</span>
                         <h3 class="font-bold text-base md:text-xl mb-2 leading-tight break-keep text-slate-900 group-hover:text-emerald-700 transition-colors">${item.title}</h3>
                         <p class="text-slate-500 text-xs font-light leading-relaxed break-keep line-clamp-2">${item.desc}</p>
                     </div>
-                </article>
+                </article>`;
+        wrapper.innerHTML += `
+            <div class="swiper-slide h-auto">
+                ${item.link ? `<a href="${item.link}" target="_blank" rel="noopener" class="block h-full">${card}</a>` : card}
             </div>`;
     });
 
