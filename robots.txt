@@ -1,5 +1,28 @@
 User-agent: *
 Allow: /
+
+# AI 크롤러 명시 허용
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://cheongbyeon.co.kr/sitemap.xml
 
 #DaumWebMasterTool:9498cc3386ca39705d4d31d41ccf3c59735f9a6f43c0878973cf01c76be73b0d:InOPRjztOLdW8gAO/xmpKA==
