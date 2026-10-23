@@ -64,6 +64,34 @@
             white-space: nowrap;
             border-width: 0;
         }
+
+        /* PROMISE 리디자인 */
+        .pgrid{display:grid;grid-template-columns:1fr;border:1px solid #E2E8F0}
+        @media(min-width:768px){.pgrid{grid-template-columns:repeat(3,1fr)}}
+        .pcard{position:relative;overflow:hidden;background:#FFF;padding:2.6rem 2.2rem;min-height:21rem;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:#0f172a;border-bottom:1px solid #E2E8F0}
+        @media(min-width:768px){.pcard{border-bottom:0;border-right:1px solid #E2E8F0}.pcard:last-child{border-right:0}}
+        .pcard .pno{font-size:.95rem;font-weight:700;letter-spacing:.12em;color:#0A192F}
+        .pcard h3{font-size:1.45rem;font-weight:800;letter-spacing:-.02em;line-height:1.4;word-break:keep-all;margin-top:1rem;color:#0f172a}
+        .pcard .pdesc{color:#475569;font-size:.97rem;line-height:1.9;word-break:keep-all;margin-top:1.4rem}
+        .pcard .pdesc strong{color:#0f172a}
+        @media(min-width:768px) and (hover:hover){
+          .pcard .pdesc{opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease}
+          .pcard:hover .pdesc{opacity:1;transform:none}
+        }
+        .pcard .par{align-self:flex-end;font-size:1.1rem;color:#CBD5E1;margin-top:1.2rem;transition:color .3s}
+        .pcard:hover .par{color:#7FB4FF}
+        .pcard .gnum{position:absolute;right:.6rem;bottom:-1.8rem;font-size:10rem;font-weight:900;letter-spacing:-.06em;line-height:1;color:#F1F5F9;pointer-events:none;user-select:none}
+        .pcard>div,.pcard .par{position:relative;z-index:1}
+        .pcard.dark{background:#0A192F}
+        .pcard.dark .pno{color:#7FB4FF}
+        .pcard.dark h3{color:#FFF}
+        .pcard.dark .pdesc{color:rgba(238,244,250,.85)}
+        .pcard.dark .pdesc strong{color:#FFF}
+        .pcard.dark .gnum{color:rgba(127,180,255,.1)}
+        .pcard.dark .par{color:#3D5A80}
+        /* 스토리 대형 따옴표 */
+        .cb-q{position:absolute;top:-4rem;left:1rem;font-family:Georgia,'Noto Serif KR',serif;font-size:26rem;line-height:1;color:rgba(127,180,255,.07);user-select:none;pointer-events:none}
+        @media(max-width:768px){.cb-q{font-size:13rem;top:-1.5rem;left:0}}
     </style>
 <!-- 네이버 검색광고 전환추적 공통 스크립트 -->
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
@@ -135,12 +163,18 @@ function cb_naverLead(label) {
     </div>
 </section>
 
-<section class="bg-navy py-24 px-6 text-white text-center md:text-left">
-    <div class="max-w-4xl mx-auto space-y-12">
-        <div class="space-y-6 leading-relaxed text-gray-300 text-lg">
-            <p>유능한 에이전트 제리 맥과이어는 수익보다 서비스의 질을 우선시하는 제안서를 썼다는 이유로 해고를 당합니다. 하지만 결국 단 한 명의 선수에게 집중하여 최고의 성공을 이끌어냈습니다.</p>
-            <p class="text-white font-medium">법률사무소 청변 역시 마찬가지입니다. 대형 로펌에서의 수많은 경험은 값진 자산이었으나, 정해진 시간 속에서 의뢰인 한 분 한 분의 목소리를 충분히 담아내지 못하는 현실은 늘 아쉬움으로 남았습니다.</p>
-            <p>우리는 그 아쉬움을 '정성'으로 채우기로 했습니다. 의뢰인이 제공해주신 작은 자료 하나까지 세심히 검토하고, 더 자주 소통하며 전략을 논의하는 <span class="text-blue-400 font-bold">열정 넘치는 청년변호사</span>가 되고자 합니다.</p>
+<section class="bg-navy py-24 px-6 text-white relative overflow-hidden">
+    <span class="cb-q" aria-hidden="true">“</span>
+    <div class="max-w-4xl mx-auto relative">
+        <div class="space-y-8 leading-loose text-gray-300 text-lg">
+            <p>유능한 에이전트 제리 맥과이어는 수익보다 서비스의 질을 우선시하는 제안서를 썼다는 이유로 해고를 당합니다.<br>
+               하지만 결국 단 한 명의 선수에게 집중하여 최고의 성공을 이끌어냈습니다.</p>
+            <p><span class="text-white font-semibold">법률사무소 청변 역시 마찬가지입니다.</span><br>
+               대형 로펌에서의 수많은 경험은 값진 자산이었으나,<br>
+               정해진 시간 속에서 의뢰인 한 분 한 분의 목소리를 충분히 담아내지 못하는 현실은 늘 아쉬움으로 남았습니다.</p>
+            <p><span class="text-white font-semibold">우리는 그 아쉬움을 '정성'으로 채우기로 했습니다.</span><br>
+               의뢰인이 제공해주신 작은 자료 하나까지 세심히 검토하고,<br>
+               더 자주 소통하며 전략을 논의하는 <span class="text-blue-400 font-bold">열정 넘치는 청년변호사</span>가 되고자 합니다.</p>
         </div>
     </div>
 </section>
@@ -148,48 +182,44 @@ function cb_naverLead(label) {
 <section id="promise" class="py-24 bg-white border-t border-gray-100">
     <div class="container mx-auto px-6">
         <div class="text-center mb-16">
-            <span class="text-blue-600 font-bold tracking-wider text-sm uppercase mb-2 block">PROMISE</span>
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight break-keep text-slate-900">
+            <span class="font-bold tracking-wider text-sm uppercase mb-2 block" style="color:#0A192F">PROMISE</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight break-keep text-slate-500">
                 믿을 수 있는 법률 파트너<br>
-                <span class="text-blue-600">청변이 약속드리는 3가지</span>
+                <span class="font-extrabold" style="color:#0A192F">청변이 약속드리는 3가지</span>
             </h2>
-            <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            <div class="w-24 h-1 mx-auto rounded-full" style="background:#0A192F"></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <a href="https://blog.naver.com/cheong_byeon/224100548391" target="_blank" class="block bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-blue-500 transition duration-300 hover:-translate-y-2 shadow-md group">
-                <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
-                    <i class="fas fa-user-tie"></i>
+        <div class="pgrid">
+            <a class="pcard" href="https://blog.naver.com/cheong_byeon/224100548391" target="_blank" rel="noopener">
+                <span class="gnum" aria-hidden="true">01</span>
+                <div>
+                    <span class="pno">01</span>
+                    <h3>직접 상담,<br>직접 수행 원칙</h3>
+                    <p class="pdesc">사무장이 상담하지 않습니다.<br>
+                       <strong>대형로펌 출신 2인 변호사가<br>직접 상담하고 직접 수행합니다.</strong></p>
                 </div>
-                <h3 class="text-xl font-bold mb-6 text-slate-900 break-keep">1. 직접 상담 직접 수행 원칙</h3>
-                <ul class="space-y-4 text-slate-600">
-                    <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0"></i><span class="break-keep">사무장이 상담하지 않습니다.</span></li>
-                    <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0"></i><span class="break-keep"><strong class="text-slate-900">대형로펌 출신 2인 변호사</strong>가 직접 상담하고 직접 수행합니다.</span></li>
-                </ul>
+                <span class="par">→</span>
             </a>
-
-            <a href="https://blog.naver.com/cheong_byeon/224160443063" target="_blank" class="block bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-blue-500 transition duration-300 hover:-translate-y-2 shadow-md group">
-                <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
-                    <i class="fas fa-scale-balanced"></i>
+            <a class="pcard dark" href="https://blog.naver.com/cheong_byeon/224160443063" target="_blank" rel="noopener">
+                <span class="gnum" aria-hidden="true">02</span>
+                <div>
+                    <span class="pno">02</span>
+                    <h3>스마트한<br>사건 수임</h3>
+                    <p class="pdesc">과다한 수임료를 제안하지 않습니다.<br>
+                       사건의 실질적 해결 가능성을 기준으로 <strong>정직하게 판단</strong>합니다.</p>
                 </div>
-                <h3 class="text-xl font-bold mb-6 text-slate-900 break-keep">2. 스마트한 사건 수임</h3>
-                <ul class="space-y-4 text-slate-600">
-                    <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0"></i><span class="break-keep">과다한 수임료를 제안하지 않습니다.</span></li>
-                    <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0"></i><span class="break-keep">사건의 실질적 해결 가능성을 기준으로, <strong class="text-slate-900">정직하게 판단</strong>합니다.</span></li>
-                </ul>
+                <span class="par">→</span>
             </a>
-
-            <a href="https://blog.naver.com/cheong_byeon/224215111631" target="_blank" class="block bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-blue-500 transition duration-300 hover:-translate-y-2 shadow-md group">
-                <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
-                    <i class="fas fa-bolt"></i>
+            <a class="pcard" href="https://blog.naver.com/cheong_byeon/224215111631" target="_blank" rel="noopener">
+                <span class="gnum" aria-hidden="true">03</span>
+                <div>
+                    <span class="pno">03</span>
+                    <h3>빠른 소통</h3>
+                    <p class="pdesc">수임 즉시 <strong>변호사와 함께하는 사건방</strong>이 개설됩니다.<br>
+                       모든 사건 진행 상황은 <strong>즉시 공유</strong>합니다.</p>
                 </div>
-                <h3 class="text-xl font-bold mb-6 text-slate-900 break-keep">3. 빠른 소통</h3>
-                <ul class="space-y-4 text-slate-600">
-                    <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0"></i><span class="break-keep">수임 즉시 <strong class="text-slate-900">변호사와 함께하는 사건방</strong>이 개설됩니다.</span></li>
-                    <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0"></i><span class="break-keep">모든 사건 진행 상황은 <strong class="text-slate-900">즉시 공유</strong>합니다.</span></li>
-                </ul>
+                <span class="par">→</span>
             </a>
-
         </div>
     </div>
 </section>
@@ -209,7 +239,7 @@ function cb_naverLead(label) {
         <div class="text-center mb-16">
             <span class="text-blue-400 font-bold tracking-wider text-sm uppercase mb-2 block">LOCATION</span>
             <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight break-keep text-white">인천 서구·청라·루원시티 법률사무소 청변 오시는 길</h2>
-            <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            <div class="w-24 h-1 mx-auto rounded-full" style="background:#0A192F"></div>
         </div>
         <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-w-6xl mx-auto border border-white/10">
             <div class="w-full md:w-3/5 h-[400px] md:h-auto relative bg-slate-100 flex items-center justify-center overflow-hidden">
